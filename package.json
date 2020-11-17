@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "npm run lint",
+    "start": "nodemon server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   },
   "homepage": "https://github.com/prabhm512/project-2#readme",
   "dependencies": {
-    "mysql2": "^2.2.5"
+    "eslint": "^7.13.0",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.6"
   }
 }
