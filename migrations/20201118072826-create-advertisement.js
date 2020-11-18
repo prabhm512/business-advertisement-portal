@@ -1,7 +1,8 @@
-'use strict';
+/* eslint-disable no-unused-vars */
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Advertisements', {
+    await queryInterface.createTable("Advertisements", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,7 +12,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      web_link: {
+      webLink: {
         type: Sequelize.STRING
       },
       image: {
@@ -31,6 +32,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Advertisements');
+    await queryInterface.dropTable("Advertisements");
   }
 };
