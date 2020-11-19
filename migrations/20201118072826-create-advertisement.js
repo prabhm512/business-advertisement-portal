@@ -9,13 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      prodName: {
         type: Sequelize.STRING
       },
-      webLink: {
-        type: Sequelize.STRING
+      marketPrice: {
+        type: Sequelize.DECIMAL
       },
-      image: {
+      offeredPrice: {
+        type: Sequelize.DECIMAL
+      },
+      prodImg: {
         type: Sequelize.BLOB
       },
       description: {
