@@ -9,4 +9,11 @@ $(document).ready(() => {
     });
   };
   getAds();
+
+  $.ajax({
+    method: "GET",
+    url: "/admin"
+  }).then(res => {
+    
+  })
 });
