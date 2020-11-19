@@ -20,10 +20,11 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false
       },
-      name: DataTypes.STRING,
-      webLink: DataTypes.STRING,
-      image: DataTypes.BLOB,
-      description: DataTypes.STRING
+      prodName: DataTypes.STRING,
+      marketPrice: DataTypes.DECIMAL,
+      offeredPrice: DataTypes.DECIMAL,
+      description: DataTypes.STRING,
+      category: DataTypes.STRING
     },
     {
       sequelize,
