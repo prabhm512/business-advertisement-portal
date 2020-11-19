@@ -1,0 +1,5 @@
+id,bussName,bussCategory,bussDescription,createdAt,updatedAt
+1,apple,tech,sell expensive stuff,998-01-01 23:59:59.997,998-01-01 23:59:59.997
+2,amazon,tech,sell expensive shit,00:00.0,998-01-01 23:59:59.997
+3,google,tech,sell do stuff,00:00.0,998-01-01 23:59:59.997
+4,facebook,tech,sell add stuff,11998-01-01 23:59:59.997,998-01-01 23:59:59.997

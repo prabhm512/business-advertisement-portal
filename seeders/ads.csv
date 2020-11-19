@@ -1,0 +1,4 @@
+id,prodName,prodImg,marketPrice,offeredPrice,description,createdAt,updatedAt,BusinessId
+1,iphone,qweqwee,1000,900,expensive smartphone,998-01-01 23:59:59.997,998-01-01 23:59:59.997,1
+2,ball,errwer,100,50,you can play soccer,998-01-01 23:59:59.997,998-01-01 23:59:59.997,2
+3,tshirt,ewrwer,200,150,you can wear it is nice,998-01-01 23:59:59.997,998-01-01 23:59:59.997,3
