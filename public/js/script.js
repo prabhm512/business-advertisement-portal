@@ -10,10 +10,10 @@ $(document).ready(() => {
   };
   getAds();
 
-  $.ajax({
-    method: "GET",
-    url: "/admin"
-  }).then(res => {
-    
-  })
+  postAd = () => {
+    $.ajax({
+      method: "POST",
+      url: "/admin"
+    }).then();
+  };
 });
