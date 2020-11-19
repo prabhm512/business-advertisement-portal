@@ -9,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     // eslint-disable-next-line no-unused-vars
     static associate(models) {
-      // define association here
+      Advertisement.belongsTo(models.Business, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
     }
   }
   Advertisement.init(
@@ -31,5 +35,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Advertisement"
     }
   );
+
   return Advertisement;
 };
