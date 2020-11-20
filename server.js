@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 const express = require("express");
-
+const path = require("path");
 const db = require("./models");
 
 // Sets up the Express App
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
