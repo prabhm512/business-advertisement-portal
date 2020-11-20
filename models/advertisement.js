@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
   class Advertisement extends Model {
     /**
@@ -16,19 +17,24 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
+
   Advertisement.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
+      prodName: {
+        type: DataTypes.STRING
       },
-      prodName: DataTypes.STRING,
-      prodImg: DataTypes.BLOB,
-      marketPrice: DataTypes.DECIMAL,
-      offeredPrice: DataTypes.DECIMAL,
-      description: DataTypes.STRING
+      prodImg: {
+        type: DataTypes.BLOB
+      },
+      originalPrice: {
+        type: DataTypes.DECIMAL
+      },
+      discount: {
+        type: DataTypes.DECIMAL
+      },
+      description: {
+        type: DataTypes.STRING
+      }
     },
     {
       sequelize,
