@@ -1,23 +1,29 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  //get all the advertisements includigng the business related to
+  //get all the advertisements including the business related to
   app.get("/api/advertisements", (req, res) => {
-    db.Advertisement.findAll({ include: [db.Business] }).then(ads => {
+    // db.Advertisement.findAll({ include: [db.Business] }).then(ads => {
+    //   console.log(ads);
+    //   res.json(ads);
+    // });
+    db.Advertisement.findAll().then(ads => {
       console.log(ads);
       res.json(ads);
     });
   });
   //post the add
   app.post("/api/advertisements", (req, res) => {
+    console.log(req.body);
     db.Advertisement.create({
-      prodName: req.body.name,
-      prodImg: req.body.image,
+      prodName: req.body.prodName,
+      description: req.body.prodDesc,
       marketPrice: req.body.marketPrice,
       offeredPrice: req.body.offeredPrice,
-      description: req.body.description
+      prodImg: req.body.prodImg
     })
       .then(ads => {
+        console.log(ads);
         res.json(ads);
       })
       .catch(err => {

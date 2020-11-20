@@ -8,12 +8,35 @@ $(document).ready(() => {
       console.log(res);
     });
   };
-  getAds();
+  // getAds();
 
-  postAd = () => {
-    $.ajax({
-      method: "POST",
-      url: "/admin"
-    }).then();
+  // When the submit button is clicked, store all entered values in an object
+  $(".submit-ad").on("click", event => {
+    event.preventDefault;
+
+    const advertisement = {
+      // businessName: $(".bussinessName")
+      //   .val()
+      //   .trim(),
+      prodName: $(".prodName")
+        .val()
+        .trim(),
+      prodDesc: $(".prodDesc")
+        .val()
+        .trim(),
+      marketPrice: $(".marketPrice")
+        .val()
+        .trim(),
+      offeredPrice: $(".offeredPrice")
+        .val()
+        .trim(),
+      prodImg: $(".prod-image").val()
+    };
+    // Post this object to the api route
+    postAd(advertisement);
+  });
+
+  postAd = ad => {
+    $.post("/api/advertisements", ad).then(getAds);
   };
 });
