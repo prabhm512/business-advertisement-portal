@@ -12,7 +12,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       bussName: DataTypes.STRING,
       bussCategory: DataTypes.STRING,
-      bussEmail: DataTypes.STRING
+      bussEmail: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          // length of email should be bw 3 to 140 characters
+          len: [3, 140],
+          isEmail: true
+        }
+      }
     },
     {
       sequelize,

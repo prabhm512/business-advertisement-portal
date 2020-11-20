@@ -14,10 +14,6 @@ module.exports = function(app) {
       // console.log(ads);
       res.json(ads);
     });
-    // db.Advertisement.findAll().then(ads => {
-    //   console.log(ads);
-    //   res.json(ads);
-    // });
   });
 
   // post the bussiness
