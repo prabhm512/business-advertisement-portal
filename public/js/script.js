@@ -70,6 +70,14 @@ $(document).ready(() => {
       $.post("/api/businesses", business).then(() => {
         getBusinesses();
         postAd(advertisement);
+        // Empty input after post has been made
+        $(".bussinessName").val("");
+        $(".bussinessCategory").val("");
+        $(".bussinessEmail").val("");
+        $(".prodName").val("");
+        $(".prodDesc").val("");
+        $(".originalPrice").val("");
+        $(".discount").val("");
       });
     } else {
       // Changes background colour of email input box to red on entry of an incorrect email
