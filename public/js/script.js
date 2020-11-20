@@ -25,41 +25,56 @@ $(document).ready(() => {
   // When the submit button is clicked, store all entered values in an object
   $(".submit-ad").on("click", event => {
     event.preventDefault;
-    const business = {
-      bussName: $(".bussinessName")
-        .val()
-        .trim(),
-      bussCategory: $(".bussinessCategory")
-        .val()
-        .trim(),
-      bussEmail: $(".bussinessEmail")
-        .val()
-        .trim()
-    };
-    const advertisement = {
-      prodName: $(".prodName")
-        .val()
-        .trim(),
-      prodDesc: $(".prodDesc")
-        .val()
-        .trim(),
-      originalPrice: $(".originalPrice")
-        .val()
-        .trim(),
-      discount: $(".discount")
-        .val()
-        .trim(),
-      prodImg: $(".prod-image").val(),
-      bussEmail: $(".bussinessEmail")
-        .val()
-        .trim()
-    };
-    // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
-    // postBusiness(business);
-    $.post("/api/businesses", business).then(() => {
-      getBusinesses();
-      postAd(advertisement);
-    });
+    // check if email address is valid and that it is not left null
+    if (
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        $(".bussinessEmail")
+          .val()
+          .trim()
+      )
+    ) {
+      // Changes background colour of email input box back to white.
+      // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
+      $(".bussinessEmail").css("background-color", "white");
+      const business = {
+        bussName: $(".bussinessName")
+          .val()
+          .trim(),
+        bussCategory: $(".bussinessCategory")
+          .val()
+          .trim(),
+        bussEmail: $(".bussinessEmail")
+          .val()
+          .trim()
+      };
+      const advertisement = {
+        prodName: $(".prodName")
+          .val()
+          .trim(),
+        prodDesc: $(".prodDesc")
+          .val()
+          .trim(),
+        originalPrice: $(".originalPrice")
+          .val()
+          .trim(),
+        discount: $(".discount")
+          .val()
+          .trim(),
+        prodImg: $(".prod-image").val(),
+        bussEmail: $(".bussinessEmail")
+          .val()
+          .trim()
+      };
+      // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
+      // postBusiness(business);
+      $.post("/api/businesses", business).then(() => {
+        getBusinesses();
+        postAd(advertisement);
+      });
+    } else {
+      // Changes background colour of email input box to red on entry of an incorrect email
+      $(".bussinessEmail").css("background-color", "#ffcccb");
+    }
   });
 
   // postBusiness = bus => {
