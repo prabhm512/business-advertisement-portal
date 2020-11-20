@@ -1,4 +1,5 @@
 // const path = require("path");
+const db = require("../models");
 
 // html routes
 module.exports = function(app) {
@@ -11,6 +12,11 @@ module.exports = function(app) {
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));
   });
   app.get("/admin", (req, res) => {
-    res.render("admin");
+    db.Advertisement.findAll({ include: [db.Business] }).then(data => {
+      const adsInDb = {
+        ads: data
+      };
+      res.render("admin", adsInDb);
+    });
   });
 };
