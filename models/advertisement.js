@@ -27,10 +27,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BLOB
       },
       originalPrice: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.INTEGER
       },
       discount: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.INTEGER
+      },
+      discountedPrice: {
+        type: DataTypes.FLOAT
       },
       description: {
         type: DataTypes.STRING

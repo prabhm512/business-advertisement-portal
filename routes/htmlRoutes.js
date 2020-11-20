@@ -19,4 +19,12 @@ module.exports = function(app) {
       res.render("admin", adsInDb);
     });
   });
+  app.get("/test", (req, res) => {
+    db.Advertisement.findAll({ include: [db.Business] }).then(data => {
+      const adsInDb = {
+        ads: data
+      };
+      res.render("test", adsInDb);
+    });
+  });
 };
