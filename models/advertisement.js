@@ -9,32 +9,27 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     // eslint-disable-next-line no-unused-vars
-    // static associate(models) {
-    //   Advertisement.belongsTo(models.Business, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // }
+    static associate(models) {
+      Advertisement.belongsTo(models.Business, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    }
   }
 
   Advertisement.init(
     {
-      // id: {
-      //   type: DataTypes.UUID,
-      //   primaryKey: true,
-      //   defaultValue: DataTypes.UUIDV4 // Or Sequelize.UUIDV1
-      // },
       prodName: {
         type: DataTypes.STRING
       },
       prodImg: {
         type: DataTypes.BLOB
       },
-      marketPrice: {
+      originalPrice: {
         type: DataTypes.DECIMAL
       },
-      offeredPrice: {
+      discount: {
         type: DataTypes.DECIMAL
       },
       description: {
