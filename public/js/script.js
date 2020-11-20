@@ -37,9 +37,6 @@ $(document).ready(() => {
         .trim()
     };
     const advertisement = {
-      bussName: $(".bussinessName")
-        .val()
-        .trim(),
       prodName: $(".prodName")
         .val()
         .trim(),
@@ -52,7 +49,10 @@ $(document).ready(() => {
       discount: $(".discount")
         .val()
         .trim(),
-      prodImg: $(".prod-image").val()
+      prodImg: $(".prod-image").val(),
+      bussEmail: $(".bussinessEmail")
+        .val()
+        .trim()
     };
     // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
     // postBusiness(business);

@@ -35,16 +35,17 @@ module.exports = function(app) {
   });
 
   //post the add
-  app.post("/api/advertisements", (req, res) => {
+  app.post("/api/advertisements", async (req, res) => {
+    let businessID;
     // Get the record in the db where business name is the name passed in by the user
-    // const bussinessID = db.Business.findOne({
-    //   attributes: ["id"],
-    //   where: {
-    //     bussName: req.body.bussName
-    //   }
-    // });
-
-    // console.log(bussinessID);
+    await db.Business.findOne({
+      attributes: ["id"],
+      where: {
+        bussEmail: req.body.bussEmail
+      }
+    }).then(result => {
+      businessID = result.dataValues.id;
+    });
 
     // Create a record in the advertisements table
     db.Advertisement.create({
@@ -53,7 +54,7 @@ module.exports = function(app) {
       originalPrice: req.body.marketPrice,
       discount: req.body.oferedPrice,
       prodImg: req.body.prodImg,
-      BusinessId: 1
+      BusinessId: businessID
     })
       .then(ads => {
         // console.log(ads);
