@@ -4,11 +4,19 @@
             <h1>Waiting List</h1>
             <ol class="waiting-list">
                 {{#each ads}}
-                <li>{{this.dataValues.Business.dataValues.bussName}} --> {{this.dataValues.prodName}}</li>
-                {{/each}}
+                    <li>{{this.dataValues.Business.dataValues.bussName}} --> {{this.dataValues.prodName}}<button class="approve">Approve</button><button class="reject">Reject</button></li>
+                {{/each}}     
             </ol>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>On Display</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Archive</h1>
+        </div>
+    </div>
 </div>
-<h1>On Display</h1>
-<h1>Archive</h1>

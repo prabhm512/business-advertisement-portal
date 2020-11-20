@@ -14,5 +14,13 @@ body {
 }
 
 .waiting-list li {
-    border: 1px solid black; 
+    margin-top: 5px;
+}
+
+.approve {
+    margin-left: 20px;
+}
+
+.reject {
+    margin-left: 10px;
 }
