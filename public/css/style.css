@@ -11,5 +11,8 @@ body {
 }
 .waiting-list {
     list-style-position: inside;
-    border: 1px solid black;
+}
+
+.waiting-list li {
+    border: 1px solid black; 
 }

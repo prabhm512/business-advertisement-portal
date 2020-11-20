@@ -16,6 +16,7 @@ module.exports = function(app) {
       const adsInDb = {
         ads: data
       };
+      console.log(data[0].dataValues.Business.dataValues.bussName);
       res.render("admin", adsInDb);
     });
   });
