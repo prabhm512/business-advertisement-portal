@@ -1,7 +1,34 @@
+* {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(0.25turn, #3f89a8ec, #deebd4, #b5d4b4);
 }
 .submit-ad {
     margin-top: 10px;
     float: right;
+}
+.waiting-list {
+    list-style-position: inside;
+}
+
+.waiting-list li {
+    margin-top: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.waiting-list li:hover + .hide{
+    display: block;
+}
+
+.approve {
+    margin-left: 20px;
+}
+
+.reject {
+    margin-left: 10px;
 }
