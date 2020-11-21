@@ -28,22 +28,22 @@ $(document).ready(() => {
     // check if email address is valid and that it is not left null
     if (
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        $(".bussinessEmail")
+        $(".businessEmail")
           .val()
           .trim()
       )
     ) {
       // Changes background colour of email input box back to white.
       // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
-      $(".bussinessEmail").css("background-color", "white");
+      $(".businessEmail").css("background-color", "white");
       const business = {
-        bussName: $(".bussinessName")
+        bussName: $(".businessName")
           .val()
           .trim(),
-        bussCategory: $(".bussinessCategory")
+        bussCategory: $(".businessCategory")
           .val()
           .trim(),
-        bussEmail: $(".bussinessEmail")
+        bussEmail: $(".businessEmail")
           .val()
           .trim()
       };
@@ -61,7 +61,7 @@ $(document).ready(() => {
           .val()
           .trim(),
         prodImg: $(".prod-image").val(),
-        bussEmail: $(".bussinessEmail")
+        bussEmail: $(".businessEmail")
           .val()
           .trim()
       };
@@ -71,9 +71,9 @@ $(document).ready(() => {
         getBusinesses();
         postAd(advertisement);
         // Empty input after post has been made
-        $(".bussinessName").val("");
-        $(".bussinessCategory").val("");
-        $(".bussinessEmail").val("");
+        $(".businessName").val("");
+        $(".businessCategory").val("");
+        $(".businessEmail").val("");
         $(".prodName").val("");
         $(".prodDesc").val("");
         $(".originalPrice").val("");
@@ -81,7 +81,7 @@ $(document).ready(() => {
       });
     } else {
       // Changes background colour of email input box to red on entry of an incorrect email
-      $(".bussinessEmail").css("background-color", "#ffcccb");
+      $(".businessEmail").css("background-color", "#ffcccb");
     }
   });
 
@@ -92,19 +92,28 @@ $(document).ready(() => {
   };
 });
 (function() {
-  'use strict';
-  window.addEventListener('load', function() {
+  "use strict";
+  window.addEventListener(
+    "load",
+    () => {
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
+      const forms = document.getElementsByClassName("needs-validation");
       // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
+      // eslint-disable-next-line no-unused-vars
+      const validation = Array.prototype.filter.call(forms, form => {
+        form.addEventListener(
+          "submit",
+          event => {
+            if (form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-      }, false);
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
       });
-  }, false);
-  })();
+    },
+    false
+  );
+})();
