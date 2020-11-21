@@ -92,3 +92,26 @@ padding: 20px;
     width: 21.5em;margin:0 auto;
     text-align: center;
 }
+.waiting-list {
+    list-style-position: inside;
+}
+
+.waiting-list li {
+    margin-top: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.waiting-list li:hover + .hide{
+    display: block;
+}
+
+.approve {
+    margin-left: 20px;
+}
+
+.reject {
+    margin-left: 10px;
+}

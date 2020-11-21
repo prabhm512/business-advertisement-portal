@@ -47,12 +47,16 @@ module.exports = function(app) {
     db.Advertisement.create({
       prodName: req.body.prodName,
       description: req.body.prodDesc,
-      originalPrice: req.body.marketPrice,
-      discount: req.body.oferedPrice,
+      originalPrice: req.body.originalPrice,
+      discount: req.body.discount,
+      discountedPrice: parseFloat(
+        ((100 - req.body.discount) / 100) * req.body.originalPrice
+      ),
       prodImg: req.body.prodImg,
       BusinessId: businessID
     })
       .then(ads => {
+        console.log(discountedPrice);
         // console.log(ads);
         res.json(ads);
       })
