@@ -26,7 +26,6 @@ passport.use(
         }
         // If there is a admin with the given email, but the password the admin gives us is incorrect
         else if (!admin.validPassword(password)) {
-        console.log("test" +password)
           return done(null, false, {
             message: "Incorrect password."
           });
