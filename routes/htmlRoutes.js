@@ -47,7 +47,7 @@ module.exports = function(app) {
       const adsInDb = {
         ads: data
       };
-      res.render("test", adsInDb);
+      res.render("preview", adsInDb);
     });
   });
 };
