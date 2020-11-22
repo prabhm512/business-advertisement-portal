@@ -24,10 +24,10 @@
     "bcryptjs": "2.4.3",
     "express": "^4.17.0",
     "express-handlebars": "^5.2.0",
-    "express-session": "^1.16.1",
+    "express-session": "^1.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^2.0.6",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6",
     "sequelize-cli": "^6.2.0"
