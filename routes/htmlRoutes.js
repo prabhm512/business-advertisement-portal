@@ -37,8 +37,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/test", (req, res) => {
-    db.Advertisement.findAll({ include: [db.Business] }).then(data => {
+  app.get("/product/:id", (req, res) => {
+    db.Advertisement.findAll({
+      include: [db.Business],
+      where: {
+        id: req.params.id
+      }
+    }).then(data => {
       const adsInDb = {
         ads: data
       };

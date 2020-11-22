@@ -117,7 +117,7 @@ padding: 20px;
 }
 
 /* Card styling */
-.originalPrice {
+.originalPriceCardRender {
     text-decoration: line-through;
     font-size: 22px;
 }
