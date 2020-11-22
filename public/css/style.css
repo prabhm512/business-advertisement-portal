@@ -115,3 +115,23 @@ padding: 20px;
 .reject {
     margin-left: 10px;
 }
+
+/* Card styling */
+.originalPrice {
+    text-decoration: line-through;
+    font-size: 22px;
+}
+
+.discountedPrice {
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+
+.product-details {
+    font-size: 20px;
+}
+
+.description {
+    font-size: 16px;
+}
