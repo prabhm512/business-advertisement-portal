@@ -117,3 +117,8 @@ $(document).ready(() => {
     false
   );
 })();
+
+$(() => {
+  // eslint-disable-next-line quotes
+  $('[data-toggle="tooltip"]').tooltip();
+});
