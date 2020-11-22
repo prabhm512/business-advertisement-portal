@@ -2,10 +2,14 @@
 const db = require("../models");
 
 // html routes
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
-    res.render("index");
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
+    db.Advertisement.findAll({ include: [db.Business] }).then(data => {
+      const adsInDb = {
+        ads: data
+      };
+      res.render("index", adsInDb);
+    });
   });
   app.get("/advertise", (req, res) => {
     res.render("advertise");
