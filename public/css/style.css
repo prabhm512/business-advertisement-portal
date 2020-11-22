@@ -1,13 +1,96 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-body {
+  }
+  
+body {font-family: 'Alegreya Sans', sans-serif;
     background: linear-gradient(0.25turn, #3f89a8ec, #deebd4, #b5d4b4);
 }
 .submit-ad {
     margin-top: 10px;
     float: right;
+}
+
+#navBar {
+    opacity: 85%;
+}
+
+.display-4 { 
+    padding-top: 30px;
+}
+#articleAdvertise{
+padding: 20px;
+}
+#containerAdvertise {
+    background: wheat;
+    border-radius: 15px;
+
+}
+
+#footerContact {
+    position: relative; 
+    clear:both;
+    padding-top:20px;
+}
+#jumboTronIndex {
+    padding-top: 60px;
+}
+#jumboTronAdvertise {
+    font-weight: bolder;
+}
+#mainImage {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 20px;
+    
+}
+#secondTitleMain { 
+    background-color: grey;
+    
+     font-size: 20px;
+}
+/* secondTitle  */
+#footerContact {
+    position: relative; 
+    clear:both; 
+    padding-top:20px;
+}
+#submit-button {
+   
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.display-4 {
+    padding-top: 60px;
+    font-weight: bolder;
+}
+#containerAdvertise {
+    background: white;
+    text-align: center;
+}
+#headerTwoAdvertise {
+    text-align: center;
+    border-radius: 20px;
+    display: inline;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+.invalid-feedback {
+
+    font-size: 13px;
+}
+.card {
+    width: 21.5em;margin:0 auto;
+    text-align: center;
 }
 .waiting-list {
     list-style-position: inside;
