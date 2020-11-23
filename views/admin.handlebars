@@ -1,7 +1,19 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar"><span class="admin-heading">Admin Console</span></nav>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar"><span class="admin-heading">Admin Console</span>
+                <div class="collapse navbar-collapse order-3" id="exCollapsingNavbar">
+                    <ul class="nav navbar-nav ml-auto admin-options">
+                        {{!-- <li class="nav-item"><a href="/main" class="nav-link">About</a></li> --}}
+                        <li class="nav-item"><a href="/" class="nav-link">Main</a></li>
+                        <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
+                        <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
+                        {{!-- <li class="nav-item"><a href="#footerContact" class="nav-link">Contact</a></li> --}}
+                        <li class="nav-item"><a href="/api/advertisements" class="nav-link">Ads API</a></li>
+                        <li class="nav-item"><a href="/api/businesses" class="nav-link">Businesses API</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </div>
 </div>

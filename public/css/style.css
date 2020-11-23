@@ -101,6 +101,11 @@ padding: 20px;
     color: white;
     margin: auto;
 }
+
+.admin-options li {
+    color: white;
+}
+
 .pending-list {
     list-style-position: inside;
 }
@@ -136,3 +141,4 @@ padding: 20px;
 .description {
     font-size: 16px;
 }
+
