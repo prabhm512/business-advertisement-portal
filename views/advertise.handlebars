@@ -83,7 +83,7 @@
                 <div id="jumboTronAdvertise" class="jumbotron jumbotron-fluid" >
                     <div class="container">
                         <h1 class="display-4">Business Advertisement Portal</h1>
-                        <p class="lead">Please enter your details and admins will check you Business details!</p>
+                        <p class="lead">Please enter your advertisement details!</p>
                 </div>
                 </div>
             </header>
@@ -91,10 +91,11 @@
             <article id="articleAdvertise">
               <div class="container">
               <div class="container-fluid" id="containerAdvertise">
-                <h2 id="headerTwoAdvertise">Form validation</h2>
+                <h2 id="headerTwoAdvertise">Advertisement Details</h2>
+                <br><br>
                 <form class="was-validated">
                     <div class="mb-3">
-                      <label for="validationTextarea">Business Name: </label>
+                      {{!-- <label for="validationTextarea">Business Name: </label> --}}
                       
                       <textarea type="text" placeholder="Business Name" class="form-control businessName is-invalid" id="validationTextarea"  required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
                       <div class="invalid-feedback">
@@ -117,33 +118,34 @@
                       <div class="input-group-prepend">
                         <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                       </div>
-                      <input type="text" class="form-control businessEmail  is-invalid" aria-describedby="validatedInputGroupPrepend" required>
+                      <input type="text" class="form-control businessEmail is-invalid" placeholder="Business Email" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
                     <div class="invalid-feedback">
                       Example: Johnsmith@abc.com
                     </div>
+                    <br>
 
-                
+                    {{!-- <h2 id="headerTwoAdvertise">Product Details</h2> --}}
                     <div class="mb-3">
-                      <label for="validationTextarea">Product Name: </label>
-                      <textarea class="form-control prodName is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      {{!-- <label for="validationTextarea">Product Name: </label> --}}
+                      <textarea class="form-control prodName is-invalid" id="validationTextarea" placeholder="Product Name" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
                       <div class="invalid-feedback">
                         Please enter a valid Product name.
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label for="validationTextarea">Product  Description:: </label>
-                      <textarea class="form-control prodName is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
-                      <div class="invalid-feedback">
+                      {{!-- <label for="validationTextarea">Product  Description:: </label> --}}
+                      <textarea class="form-control prodDesc is-invalid" id="validationTextarea" placeholder="Brief Product Description" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      {{!-- <div class="invalid-feedback">
                         Please enter a valid Product name.
-                      </div>
+                      </div> --}}
                     </div>
                     <div class="mb-3">
                       <div class="input-group is-invalid">
                         <div class="input-group-prepend">
                           <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
                         </div>
-                        <input class="form-control prodDesc" type="text" placeholder="Product Discount">
+                        <input class="form-control originalPrice" type="text" placeholder="Original Price">
         
                       </div>
                       <div class="invalid-feedback">
@@ -155,7 +157,7 @@
                         <div class="input-group-prepend">
                           <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
                         </div>
-                        <input class="form-control prodDesc" type="text" placeholder="Product Description">
+                        <input class="form-control discount" type="text" placeholder="Percentage Discount Offered">
                       </div>
                       <div class="invalid-feedback">
                         Required!
@@ -163,7 +165,7 @@
                     </div>
                     <div class="input-group is-invalid">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                        <input type="file" class="custom-file-input prod-image" id="validatedInputGroupCustomFile" required>
                         <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose Image file...</label>
                       </div>
                       <div class="input-group-append prod-image">
@@ -174,14 +176,14 @@
                     </div>
                     </div>
                           <button
-                    class="btn btn-primary  submit-ad "
+                    class="btn btn-primary  submit-ad"
                     type="submit"
                     id="submit-button"
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Submit for admin review!"
-                  >
-                    <i class="far fa-check-circle"></i>
+                  ><sapn style="font-size:18px">Submit</sapn>
+                    {{!-- <i class="far fa-check-circle"></i> --}}
                   </button>
                   </form>
                 </div>

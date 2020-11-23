@@ -41,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
       active: {
         type: DataTypes.BOOLEAN
       }
+      // archive: {
+      //   type: DataTypes.BOOLEAN
+      // }
     },
     {
       sequelize,
