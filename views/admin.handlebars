@@ -4,9 +4,9 @@
             <h1>Pending</h1>
             <ul type="none" class="pending-list">
                 {{#each ads}}
-                    {{#unless this.dataValues.active}}
-                        {{> ads/ads-block active=true}}
-                    {{/unless}}
+                {{#unless this.dataValues.active}}
+                {{> ads/ads-block active=true}}
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -14,11 +14,11 @@
     <div class="row">
         <div class="col-sm-6">
             <h1>Active</h1>
-            <ul type="none"> 
+            <ul type="none">
                 {{#each ads}}
-                    {{#if this.dataValues.active}}
-                        {{> ads/ads-block active=false}}
-                    {{/if}}
+                {{#if this.dataValues.active}}
+                {{> ads/ads-block active=false}}
+                {{/if}}
                 {{/each}}
             </ul>
         </div>
