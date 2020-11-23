@@ -84,6 +84,15 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
+  // Delete the advertisement from the table
+  app.delete("/api/advertisements/:id", (req, res) => {
+    db.Advertisement.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(ads => res.json(ads));
+  });
+
   // Update the active field in the advertisement table if it is approved
   app.put("/api/advertisements/:id", (req, res) => {
     db.Advertisement.update(

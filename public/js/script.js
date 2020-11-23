@@ -90,6 +90,23 @@ $(document).ready(() => {
     $.post("/api/advertisements", ad).then(getAds);
   };
 
+  // Delete the advertisement if it is rejected
+  $(".reject").on("click", event => {
+    // Reconfirm if admin really wants to delete the advertisement.
+    const recheck = confirm(
+      "Are you sure that you want to delete this advertisement!?"
+    );
+
+    const id = event.target.id;
+    if (recheck) {
+      $.ajax("/api/advertisements/" + id, {
+        type: "DELETE"
+      })
+        .then(() => location.reload())
+        .then(() => getAds());
+    }
+  });
+
   // Update the status of the advertisement on clicking the approve button
   $(".approve").on("click", event => {
     // store id of approve button that is clicked
