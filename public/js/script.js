@@ -98,7 +98,6 @@ $(document).ready(() => {
     const newState = {
       active: true
     };
-
     // Change status of the approved product from 'pending' to 'active' or vice versa
     $.ajax("/api/advertisements/" + id, {
       type: "PUT",

@@ -1,3 +1,4 @@
+
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar" >
       <div class="container">
           <a class="navbar-brand" href="#"><img
@@ -49,12 +50,15 @@
 
                     </div>
                 </form>
+
             </li>
         </ul>
-    </li>
-</ul>
-</div>
-</div>
+    </div>
+
+</nav>
+
+
+
 </nav>
 <!-- Nav End/-->
 <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -63,8 +67,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Forgot password</h3>
-                <button type="button" class="close font-weight-light" data-dismiss="modal"
-                    aria-hidden="true">X</button>
+                <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">X</button>
             </div>
 
             <div class="modal-body">
@@ -82,7 +85,7 @@
 
 <!-- Header Start -->
 <header>
-    <div id="JumboTron" class="jumbotron jumbotron-fluid" style="padding-top: 60px;">
+    <div id="JumboTron" class="jumbotron jumbotron-fluid" style="background-color: rgb(113, 226, 113)">
         <div class="container">
             <h1 class="display-4">Business Advertisement Portal</h1>
             <p class="lead">Your everyday advertisement portal for small-medium business owners to advertise their
@@ -114,52 +117,55 @@
                 </datalist>
             </form>
         </div>
-        </div>
-
-{{#each approved}}
-    <div class="row">
-        <div class="col-sm-4">
-        <div class="card m-3" style="width: 19rem;">
-            <div class="card-header text-white bg-primary">
-                <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
-                <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
-            </div>
-            <div class="card-body bg-light text-dark">
-                <img src="https://via.placeholder.com/150" alt="Placeholder"
-                    sizes="(min-width: 256px) 114px, 350px" srcset="" width="262" height="204">
-                <ul class="list-group product-details">
-                    <li class="list-group-item">{{this.dataValues.prodName}}</li>
-                    <li class="list-group-item"><span class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span>   <span class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span></li>
-                    <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
-                    <li class="list-group-item description">{{this.dataValues.description}}</li>
-                    {{!-- <li class="list-group-item" style="font-size: 15px;"></li> --}}
-                    {{!-- </li> --}}
-                </ul>
-            </div>
-        </div>
     </div>
-{{/each}}
 
 
-<footer style="position: absoulte; clear:both; padding-top:20px;"
-    class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
-    id="footerContact">
     <div class="row">
-        <div class="col-md">
-            <small>Copyright &copy; #'s Website 2020</small>
-            <ul class="list-unstyled mb-0">
-                <li>
-                    <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Aman
-                        Kumar</a>
-                    <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Felipe
-                        Ferreira</a>
-                    <a class="github-link" href="https://github.com/Michaelmw17"><i
-                            class="fab fa-github"></i>Michael Watt</a>
-                    <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Prabh Singh
-                    </a>
-                </li>
-            </ul>
+        {{#each approved}}
+        <div class="col-lg-4">
+            <div class="card m-3" style="width: 19rem;">
+                <div class="card-header text-white bg-primary">
+                    <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
+                    <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
+                </div>
+                <div class="card-body bg-light text-dark">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder" sizes="(min-width: 256px) 114px, 350px"
+                        srcset="" width="262" height="204">
+                    <ul class="list-group product-details">
+                        <li class="list-group-item">{{this.dataValues.prodName}}</li>
+                        <li class="list-group-item"><span
+                                class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span> <span
+                                class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span>
+                        </li>
+                        <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
+                        <li class="list-group-item description">{{this.dataValues.description}}</li>
+                        {{!-- <li class="list-group-item" style="font-size: 15px;"></li> --}}
+                        {{!-- </li> --}}
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+        {{/each}}
 
+
+        <footer style="position: absoulte; clear:both; padding-top:20px;"
+            class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
+            id="footerContact">
+            <div class="row">
+                <div class="col-md">
+                    <small>Copyright &copy; #'s Website 2020</small>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Aman
+                                Kumar</a>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Felipe
+                                Ferreira</a>
+                            <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                    class="fab fa-github"></i>Michael Watt</a>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Prabh Singh
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
