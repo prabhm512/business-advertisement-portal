@@ -95,6 +95,12 @@ padding: 20px;
     width: 21.5em;margin:0 auto;
     text-align: center;
 }
+
+.admin-heading {
+    font-size: 40px;
+    color: white;
+    margin: auto;
+}
 .pending-list {
     list-style-position: inside;
 }
