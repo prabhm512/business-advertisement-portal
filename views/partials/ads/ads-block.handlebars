@@ -1,5 +1,5 @@
 {{#if this.dataValues.active}}
-    <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a>&nbsp;&nbsp;<button class="btn btn-warning">Archive</button></li>
+    <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a>&nbsp;&nbsp;<button class="btn btn-warning archive" id={{this.dataValues.id}}>Archive</button></li>
 {{else}}
     <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a><button class="btn btn-success approve" id={{this.dataValues.id}}>Approve</button><button class="btn btn-danger reject">Reject</button></li>
 {{/if}}

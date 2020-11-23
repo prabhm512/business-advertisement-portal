@@ -104,6 +104,21 @@ $(document).ready(() => {
       data: newState
     }).then(() => location.reload());
   });
+
+  // Archive active advertisement on 'archive' button click
+  $(".archive").on("click", event => {
+    const id = event.target.id;
+    console.log(id);
+    const newState = {
+      active: false,
+      archive: true
+    };
+
+    $.ajax("/api/archives/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(() => location.reload());
+  });
 });
 
 (function() {

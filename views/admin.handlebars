@@ -3,10 +3,13 @@
         <div class="col-sm-6">
             <h1>Pending</h1>
             <ul type="none" class="pending-list">
+                {{!-- All ads which are neither in the active list nor archived --}}
                 {{#each ads}}
-                {{#unless this.dataValues.active}}
-                {{> ads/ads-block active=true}}
-                {{/unless}}
+                    {{#unless this.dataValues.active}}
+                    {{#unless this.dataValues.archive}}
+                        {{> ads/ads-block active=true}}
+                    {{/unless}}
+                    {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -15,10 +18,13 @@
         <div class="col-sm-6">
             <h1>Active</h1>
             <ul type="none">
+                {{!-- All ads which are neither in the pending list nor archived --}}
                 {{#each ads}}
-                {{#if this.dataValues.active}}
-                {{> ads/ads-block active=false}}
-                {{/if}}
+                    {{#if this.dataValues.active}}
+                    {{#unless this.dataValues.archive}}
+                        {{> ads/ads-block active=false}}
+                    {{/unless}}
+                    {{/if}}
                 {{/each}}
             </ul>
         </div>
@@ -26,6 +32,14 @@
     <div class="row">
         <div class="col-sm-6">
             <h1>Archive</h1>
+            <ul type="none">
+                {{!-- All ads which are neither in the pending list nor active --}}
+                {{#each ads}}
+                    {{#if this.dataValues.archive}}
+                        <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a>&nbsp;&nbsp;<button class="btn btn-warning re-advertise">Re-Advertise</button></li>
+                    {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
 </div>

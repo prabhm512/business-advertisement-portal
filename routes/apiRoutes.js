@@ -73,6 +73,7 @@ module.exports = function(app) {
       ),
       prodImg: req.body.prodImg,
       active: false,
+      archive: false,
       BusinessId: businessID
     })
       .then(ads => {
@@ -83,10 +84,22 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
-  // Update the status field in the advertisement table if it is approved
+  // Update the active field in the advertisement table if it is approved
   app.put("/api/advertisements/:id", (req, res) => {
     db.Advertisement.update(
       { active: req.body.active },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(ads => res.json(ads));
+  });
+
+  // Update the archive field in teh advertisement table
+  app.put("/api/archives/:id", (req, res) => {
+    db.Advertisement.update(
+      { archive: req.body.archive, active: req.body.active },
       {
         where: {
           id: req.params.id
