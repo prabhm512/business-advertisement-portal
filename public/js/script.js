@@ -150,7 +150,6 @@ $(document).ready(() => {
       type: "PUT",
       data: newState
     }).then(() => location.reload());
-
   });
 });
 
