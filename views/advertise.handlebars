@@ -54,6 +54,7 @@
         </div>
     </div>
 </div> --}}
+
   <nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar" >
       <div class="container">
           <a class="navbar-brand" href="#"><img
@@ -69,9 +70,9 @@
           </button>
           <div class="collapse navbar-collapse" id="exCollapsingNavbar">
               <ul class="nav navbar-nav ">
-                  <li class="nav-item"><a href="index.html" class="nav-link">About</a></li>
-                  <li class="nav-item"><a href="advertise.html" class="nav-link">Advertisement</a></li>
-                  <li class="nav-item"><a href="#footerContact" class="nav-link">Contact</a></li>
+                  <li class="nav-item"><a href="/models/index.js" class="nav-link">About</a></li>
+                  <li class="nav-item"><a href="/models/advertisement.js" class="nav-link">Advertisement</a></li>
+                  <li class="nav-item"><a href="/models/index.js" class="nav-link">Contact</a></li>
               </ul>
           </div>
       </div>
@@ -94,16 +95,21 @@
                 <form class="was-validated">
                     <div class="mb-3">
                       <label for="validationTextarea">Business Name: </label>
-                      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      
+                      <textarea type="text" placeholder="Business Name" class="form-control businessName is-invalid" id="validationTextarea"  required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
                       <div class="invalid-feedback">
                         Please enter a valid business name.
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label for="validationTextarea">Product Name / Description: </label>
-                      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      <div class="input-group is-invalid">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
+                        </div>
+                        <input class="form-control businessCategory" type="text" placeholder="Business Category">
+                      </div>
                       <div class="invalid-feedback">
-                        Please enter a valid Product name.
+                        Required!
                       </div>
                     </div>
                   <div class="mb-3">
@@ -111,24 +117,34 @@
                       <div class="input-group-prepend">
                         <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                       </div>
-                      <input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required>
+                      <input type="text" class="form-control businessEmail  is-invalid" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
                     <div class="invalid-feedback">
                       Example: Johnsmith@abc.com
                     </div>
-                    
-                    
+
+                
+                    <div class="mb-3">
+                      <label for="validationTextarea">Product Name: </label>
+                      <textarea class="form-control prodName is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      <div class="invalid-feedback">
+                        Please enter a valid Product name.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="validationTextarea">Product  Description:: </label>
+                      <textarea class="form-control prodName is-invalid" id="validationTextarea" placeholder="Required" required style="resize:vertical; max-height:100px; min-height:50px; "></textarea>
+                      <div class="invalid-feedback">
+                        Please enter a valid Product name.
+                      </div>
+                    </div>
                     <div class="mb-3">
                       <div class="input-group is-invalid">
                         <div class="input-group-prepend">
                           <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
                         </div>
-                        <select class="custom-select" id="validatedInputGroupSelect" required>
-                          <option value="">Original Price...</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
+                        <input class="form-control prodDesc" type="text" placeholder="Product Discount">
+        
                       </div>
                       <div class="invalid-feedback">
                         Required!
@@ -139,28 +155,7 @@
                         <div class="input-group-prepend">
                           <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
                         </div>
-                        <select class="custom-select" id="validatedInputGroupSelect" required>
-                          <option value="">Best deal offer choose...</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
-                      <div class="invalid-feedback">
-                        Required!
-                      </div>
-                    </div>
-                    <div class="mb-3">
-                      <div class="input-group is-invalid">
-                        <div class="input-group-prepend">
-                          <label class="input-group-text" for="validatedInputGroupSelect">Options</label>
-                        </div>
-                        <select class="custom-select" id="validatedInputGroupSelect" required>
-                          <option value="">Choose Business Category ...</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
+                        <input class="form-control prodDesc" type="text" placeholder="Product Description">
                       </div>
                       <div class="invalid-feedback">
                         Required!
@@ -171,15 +166,15 @@
                         <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
                         <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose Image file...</label>
                       </div>
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Select</button>
+                      <div class="input-group-append prod-image">
+                        <button class="btn btn-outline-secondary " type="button">Select</button>
                       </div>
                     </div>
                     <div class="invalid-feedback">Required image file
                     </div>
                     </div>
                           <button
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-primary  submit-ad "
                     type="submit"
                     id="submit-button"
                     data-toggle="tooltip"
