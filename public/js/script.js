@@ -125,7 +125,7 @@ $(document).ready(() => {
   // Archive active advertisement on 'archive' button click
   $(".archive").on("click", event => {
     const id = event.target.id;
-    console.log(id);
+    // console.log(id);
     const newState = {
       active: false,
       archive: true
@@ -135,6 +135,22 @@ $(document).ready(() => {
       type: "PUT",
       data: newState
     }).then(() => location.reload());
+  });
+
+  // Put advertisement in the active state again
+  $(".re-advertise").on("click", event => {
+    const id = event.target.id;
+
+    const newState = {
+      active: true,
+      archive: false
+    };
+    // Change status of the approved product from 'pending' to 'active' or vice versa
+    $.ajax("/api/archives/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(() => location.reload());
+
   });
 });
 

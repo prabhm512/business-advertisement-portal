@@ -36,7 +36,9 @@
                 {{!-- All ads which are neither in the pending list nor active --}}
                 {{#each ads}}
                     {{#if this.dataValues.archive}}
-                        <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a>&nbsp;&nbsp;<button class="btn btn-warning re-advertise">Re-Advertise</button></li>
+                    {{#unless this.dataValues.active}}
+                        <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a>&nbsp;&nbsp;<button class="btn btn-warning re-advertise" id={{this.dataValues.id}}>Re-Advertise</button> <button class="btn btn-danger reject" id={{this.dataValues.id}}>Remove</button></li>
+                    {{/unless}}
                     {{/if}}
                 {{/each}}
             </ul>
