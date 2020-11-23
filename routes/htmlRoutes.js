@@ -4,7 +4,17 @@ const isAuthenticated = require("../config/middleware/auth");
 // html routes
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    res.render("index");
+    db.Advertisement.findAll({
+      include: [db.Business],
+      where: {
+        active: true
+      }
+    }).then(data => {
+      const approvedAds = {
+        approved: data
+      };
+      res.render("index", approvedAds);
+    });
     // res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   app.get("/advertise", (req, res) => {

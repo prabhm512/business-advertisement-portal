@@ -64,6 +64,7 @@ $(document).ready(() => {
         bussEmail: $(".businessEmail")
           .val()
           .trim()
+        // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
       // postBusiness(business);
@@ -85,12 +86,27 @@ $(document).ready(() => {
     }
   });
 
-  // postBusiness = bus => {
-  // };
   postAd = ad => {
     $.post("/api/advertisements", ad).then(getAds);
   };
+
+  // Update the status of the advertisement on clicking the approve button
+  $(".approve").on("click", event => {
+    // store id of approve button that is clicked
+    const id = event.target.id;
+
+    const newState = {
+      active: true
+    };
+
+    // Change status of the approved product from 'pending' to 'active' or vice versa
+    $.ajax("/api/advertisements/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(() => location.reload());
+  });
 });
+
 (function() {
   "use strict";
   window.addEventListener(

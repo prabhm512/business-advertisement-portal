@@ -1,17 +1,26 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <h1>Waiting List</h1>
-            <ol class="waiting-list">
+            <h1>Pending</h1>
+            <ul type="none" class="pending-list">
                 {{#each ads}}
-                    <li class="hover"><a href="/product/{{this.dataValues.id}}">{{this.dataValues.Business.dataValues.bussName}} --> {{this.dataValues.prodName}}</a><button class="approve">Approve</button><button class="reject">Reject</button></li>
+                    {{#unless this.dataValues.active}}
+                        {{> ads/ads-block active=true}}
+                    {{/unless}}
                 {{/each}}
-            </ol>
+            </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <h1>On Display</h1>
+            <h1>Active</h1>
+            <ul type="none"> 
+                {{#each ads}}
+                    {{#if this.dataValues.active}}
+                        {{> ads/ads-block active=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
     <div class="row">
