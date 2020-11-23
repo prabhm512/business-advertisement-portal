@@ -92,20 +92,12 @@ padding: 20px;
     width: 21.5em;margin:0 auto;
     text-align: center;
 }
-.waiting-list {
+.pending-list {
     list-style-position: inside;
 }
 
-.waiting-list li {
+.pending-list li {
     margin-top: 5px;
-}
-
-.hide {
-    display: none;
-}
-
-.waiting-list li:hover + .hide{
-    display: block;
 }
 
 .approve {

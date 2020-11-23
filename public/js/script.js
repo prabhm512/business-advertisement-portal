@@ -63,8 +63,8 @@ $(document).ready(() => {
         prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim(),
-        status: "pending"
+          .trim()
+        // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
       // postBusiness(business);
@@ -92,25 +92,19 @@ $(document).ready(() => {
 
   // Update the status of the advertisement on clicking the approve button
   $(".approve").on("click", event => {
-    event.stopPropagation();
-    // console.log(event.target.id);
-    const id = parseInt(event.target.id);
-    updateStatus(id);
-  });
+    // store id of approve button that is clicked
+    const id = event.target.id;
 
-  // Change status of the approved product from 'pending' to 'active'
-  updateStatus = prodID => {
-    const updatedAd = {
-      id: prodID,
-      status: "active"
+    const newState = {
+      active: true
     };
 
-    $.ajax({
+    // Change status of the approved product from 'pending' to 'active' or vice versa
+    $.ajax("/api/advertisements/" + id, {
       type: "PUT",
-      url: "/api/advertisements",
-      data: updatedAd
-    });
-  };
+      data: newState
+    }).then(() => location.reload());
+  });
 });
 
 (function() {

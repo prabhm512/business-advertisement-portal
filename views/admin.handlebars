@@ -2,17 +2,25 @@
     <div class="row">
         <div class="col-sm-6">
             <h1>Pending</h1>
-            <ul type="none" class="waiting-list">
+            <ul type="none" class="pending-list">
                 {{#each ads}}
-                    {{!-- Preview of card opens on a different route for every card. /product/id --}}
-                    <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a><button class="btn btn-success approve" id="{{this.dataValues.id}}">Approve</button><button class="btn btn-danger reject">Reject</button></li>
+                    {{#unless this.dataValues.active}}
+                        {{> ads/ads-block active=true}}
+                    {{/unless}}
                 {{/each}}
-            </ol>
+            </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <h1>Active</h1>
+            <ul type="none"> 
+                {{#each ads}}
+                    {{#if this.dataValues.active}}
+                        {{> ads/ads-block active=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
     <div class="row">

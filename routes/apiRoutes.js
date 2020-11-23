@@ -72,7 +72,7 @@ module.exports = function(app) {
         ((100 - req.body.discount) / 100) * req.body.originalPrice
       ),
       prodImg: req.body.prodImg,
-      status: req.body.status,
+      active: false,
       BusinessId: businessID
     })
       .then(ads => {
@@ -84,12 +84,12 @@ module.exports = function(app) {
   });
 
   // Update the status field in the advertisement table if it is approved
-  app.put("/api/advertisements", (req, res) => {
+  app.put("/api/advertisements/:id", (req, res) => {
     db.Advertisement.update(
-      { status: req.body.status },
+      { active: req.body.active },
       {
         where: {
-          id: req.body.id
+          id: req.params.id
         }
       }
     ).then(ads => res.json(ads));
