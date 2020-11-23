@@ -2,12 +2,13 @@
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/auth");
 // html routes
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     db.Advertisement.findAll({ include: [db.Business] }).then(data => {
       const adsInDb = {
         ads: data
       };
+      console.log(adsInDb);
       res.render("index", adsInDb);
     });
   });
