@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+body {font-family: 'Domine', serif;
+    background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d);
+}
+.submit-ad {
+    margin-top: 10px;
+    float: right;
+}
+
+#navBar {
+    opacity: 85%;
+}
+
+
+#footerContact {
+    position: relative; 
+    clear:both;
+    padding-top:20px;
+}
+
+#footerContact {
+    position: relative; 
+    clear:both; 
+    padding-top:20px;
+}
+
+.cardholder{
+    font-size: 50%;
+    font-weight: 500;
+}
