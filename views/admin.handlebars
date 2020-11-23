@@ -1,17 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <h1>Waiting List</h1>
-            <ol class="waiting-list">
+            <h1>Pending</h1>
+            <ul type="none" class="waiting-list">
                 {{#each ads}}
-                    <li class="hover"><a href="/product/{{this.dataValues.id}}">{{this.dataValues.Business.dataValues.bussName}} --> {{this.dataValues.prodName}}</a><button class="approve">Approve</button><button class="reject">Reject</button></li>
+                    {{!-- Preview of card opens on a different route for every card. /product/id --}}
+                    <li class="advertisement-info"><span class="prodID">{{this.dataValues.id}}</span>) {{this.dataValues.Business.dataValues.bussName}}: <a href="/product/{{this.dataValues.id}}">{{this.dataValues.prodName}}</a><button class="btn btn-success approve" id="{{this.dataValues.id}}">Approve</button><button class="btn btn-danger reject">Reject</button></li>
                 {{/each}}
             </ol>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <h1>On Display</h1>
+            <h1>Active</h1>
         </div>
     </div>
     <div class="row">
