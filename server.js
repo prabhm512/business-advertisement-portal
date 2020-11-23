@@ -7,7 +7,8 @@
 const express = require("express");
 const path = require("path");
 const db = require("./models");
-
+const passport = require("./config/passport");
+const session = require("express-session");
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -25,7 +26,12 @@ const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
+//admin login status, initializing
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 // =============================================================
 require("./routes/apiRoutes")(app);

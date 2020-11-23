@@ -1,4 +1,6 @@
 const db = require("../models");
+// eslint-disable-next-line prefer-const
+let passport = require("../config/passport");
 
 module.exports = function(app) {
   // get all businesses
@@ -14,6 +16,23 @@ module.exports = function(app) {
       // console.log(ads);
       res.json(ads);
     });
+  });
+
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    res.json(req.user);
+  });
+
+  app.post("/api/signup", (req, res) => {
+    db.Admin.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(() => {
+        res.redirect(307, "/api/login");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
   });
 
   // post the bussiness
