@@ -90,6 +90,23 @@ $(document).ready(() => {
     $.post("/api/advertisements", ad).then(getAds);
   };
 
+  // Delete the advertisement if it is rejected
+  $(".reject").on("click", event => {
+    // Reconfirm if admin really wants to delete the advertisement.
+    const recheck = confirm(
+      "Are you sure that you want to delete this advertisement!?"
+    );
+
+    const id = event.target.id;
+    if (recheck) {
+      $.ajax("/api/advertisements/" + id, {
+        type: "DELETE"
+      })
+        .then(() => location.reload())
+        .then(() => getAds());
+    }
+  });
+
   // Update the status of the advertisement on clicking the approve button
   $(".approve").on("click", event => {
     // store id of approve button that is clicked
@@ -100,6 +117,36 @@ $(document).ready(() => {
     };
     // Change status of the approved product from 'pending' to 'active' or vice versa
     $.ajax("/api/advertisements/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(() => location.reload());
+  });
+
+  // Archive active advertisement on 'archive' button click
+  $(".archive").on("click", event => {
+    const id = event.target.id;
+    // console.log(id);
+    const newState = {
+      active: false,
+      archive: true
+    };
+
+    $.ajax("/api/archives/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(() => location.reload());
+  });
+
+  // Put advertisement in the active state again
+  $(".re-advertise").on("click", event => {
+    const id = event.target.id;
+
+    const newState = {
+      active: true,
+      archive: false
+    };
+    // Change status of the approved product from 'pending' to 'active' or vice versa
+    $.ajax("/api/archives/" + id, {
       type: "PUT",
       data: newState
     }).then(() => location.reload());
