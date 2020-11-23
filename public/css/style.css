@@ -5,8 +5,10 @@
     scroll-behavior: smooth;
   }
   
-body {font-family: 'Alegreya Sans', sans-serif;
+body {
+    font-family: 'Alegreya Sans', sans-serif;
     background: linear-gradient(0.25turn, #3f89a8ec, #deebd4, #b5d4b4);
+    font-size: large;
 }
 .submit-ad {
     margin-top: 10px;
