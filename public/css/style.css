@@ -28,7 +28,7 @@ padding: 20px;
 #containerAdvertise {
     background: wheat;
     border-radius: 15px;
-
+    
 }
 
 #footerContact {
@@ -76,6 +76,7 @@ padding: 20px;
 #containerAdvertise {
     background: white;
     text-align: center;
+    padding-bottom: 60px;
 }
 #headerTwoAdvertise {
     text-align: center;
