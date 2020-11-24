@@ -1,4 +1,5 @@
 
+
 <nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar" >
       <div class="container">
           <a class="navbar-brand" href="/"><img
@@ -48,46 +49,55 @@
 <!-- Nav End-->
 
 <!-- Header Start -->
-<header>
-    <div id="JumboTron" class="jumbotron jumbotron-fluid" style="background-color: rgb(113, 226, 113)">
-        <div class="container">
-            <h1 class="display-4">Business Advertisement Portal</h1>
-            <p class="lead">Your everyday advertisement portal for small-medium business owners to advertise their
-                business for free!</p>
-            <img src="./public/assets/images/pexels-photo-3184418.jpeg" alt="Placeholder" style="display: flex;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;">
-        </div>
-    </div>
-</header>
 <div class="container-fluid">
-    <div class="row" style="background-color: grey; height: 80px;">
-        <p class="mx-auto my-auto" style="font-size: 30px; color: #fcfafa;">Who we support</p>
+    <header>
+        <div class="row">
 
-    </div>
-    <br>
-    <!-- Search form -->
-    <div class="row">
-        <div class="col-sm text-center">
-            <form>
-                <label for="ice-cream-choice">Choose a Category:</label>
-                <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+            <div id="JumboTron" class="jumbotron jumbotron-fluid text-primary"
+                style="background-color: rgb(113, 226, 113); width: 100%">
+                <div class="text-center">
+                    <h1 class="display-4">Business Advertisement Portal</h1>
+                    <p class="lead">We help smaller companies advertise and uplift their products to success</p>
+                    <img src="helping-hand_70921-212.jpg" alt="Placeholder" style="display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;">
+                </div>
+            </div>
+        </div>
+    </header>
 
-                <datalist id="ice-cream-flavors">
-                    <option value="technology">
-                    <option value="foods">
-                    <option value="clothing">
-                </datalist>
-            </form>
+
+    <div class="text-white">
+        <div class="row" style="height: 80px;">
+            <p class="mx-auto my-auto" style="font-size: 30px;">Who we support</p>
+
+        </div>
+        <br>
+        <!-- Search form -->
+        <div class="row">
+            <div class="col-sm text-center mb-2">
+                <form>
+                    <label for="ice-cream-choice">Choose a Category:</label>
+                    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+                    <datalist id="ice-cream-flavors">
+                        <option value="technology">
+                        <option value="foods">
+                        <option value="clothing">
+                    </datalist>
+                </form>
+            </div>
         </div>
     </div>
 
- <div class="row">
+
+
+    <div class="row" id="cardholder">
         {{#each approved}}
-        <div class="col-md-5 col-lg-4">
-            <div class="card m-3 mx-auto" style="width: 19rem;">
-                
+        <div class="col-lg-4">
+            <div class="card mb-2" style="width: 19rem;">
+
                 <div class="card-header text-white bg-primary">
                     <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
                     <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
@@ -109,10 +119,9 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
         {{/each}}
-
+    </div>
+</div>
 
         <footer 
             class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
@@ -134,4 +143,6 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </div>
+    </div>
+</footer>
