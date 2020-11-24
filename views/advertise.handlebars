@@ -63,7 +63,7 @@
               height="50"
               alt="businessIcon"
               loading="lazy"
-            />BAP</a>
+            />BPA</a>
           <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
               data-target="#exCollapsingNavbar">
               &#9776;
@@ -72,9 +72,10 @@
               <ul class="nav navbar-nav ">
                 <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/advertise" class="nav-link">Advertise</a></li>
+                <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
                 <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
               </ul>
           </div>
       </div>
@@ -99,7 +100,7 @@
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Business Name: </label> --}}
                       
-                      <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea"  ></input>
+                      <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea" data-toggle="tooltip" data-placement="left" title="Please enter a vaild business name"  required></input>
                       <div class="was-validated">
                         Please enter a valid business name.
                       </div>
@@ -109,7 +110,7 @@
                         <div class="input-group-prepend">
                           
                         </div>
-                        <input class="form-control businessCategory" type="text" placeholder="Business Category">
+                        <input data-toggle="tooltip" data-placement="left" title="Please enter a vaild business category" class="form-control businessCategory" type="text" placeholder="Business Category">
                       </div>
                       
                     </div>
@@ -118,20 +119,20 @@
                       <div class="input-group-prepend">
                         <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                       </div>
-                      <input type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                      <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a vaild business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
                     <br>
-                    <h2>Advertisement Details</h2>
+                    <h2 id="advertisementDetails">Advertisement Details</h2>
                     {{!-- <h2 id="headerTwoAdvertise">Product Details</h2> --}}
                     <div class="mb-3">
                       
                       {{!-- <label for="validationTextarea">Product Name: </label> --}}
-                      <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" ></input>
+                      <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product of your business"  ></input>
                       
                     </div>
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Product  Description:: </label> --}}
-                      <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" ></input>
+                      <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a vaild Product Description" ></input>
                       {{!-- <div class="invalid-feedback">
                         Please enter a valid Product name.
                       </div> --}}
@@ -139,7 +140,7 @@
                     <div class="mb-3">
                       <div class="input-group is-invalid">
                         <div class="input-group-prepend">
-                          <label class="input-group-text" for="validatedInputGroupSelect">$</label>
+                          <label class="input-group-text" for="validatedInputGroupSelect"> $</label>
                         </div>
                         <input class="form-control originalPrice" type="text" placeholder="Original Price">
         
@@ -149,7 +150,7 @@
                     <div class="mb-3">
                       <div class="input-group is-invalid">
                         <div class="input-group-prepend">
-                          <label class="input-group-text" for="validatedInputGroupSelect">$</label>
+                          <label class="input-group-text" for="validatedInputGroupSelect">%</label>
                         </div>
                         <input class="form-control discount" type="text" placeholder="Percentage Discount Offered">
                       </div>
@@ -158,10 +159,12 @@
                     <div class="input-group is-invalid">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input prod-image" id="validatedInputGroupCustomFile" required>
-                        <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose Image file...</label>
+                        <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label>
                       </div>
                       <div class="input-group-append prod-image">
-                        <button class="btn btn-outline-secondary " type="button">Select</button>
+                        <button class="btn btn-outline-secondary " type="button" data-toggle="tooltip"
+                    data-placement="right"
+                    title="Select an image">Select</button>
                       </div>
                     </div>
                     
@@ -171,7 +174,7 @@
                     type="submit"
                     id="submit-button"
                     data-toggle="tooltip"
-                    data-placement="top"
+                    data-placement="right"
                     title="Submit for admin review!"
                   ><span style="font-size:18px">Submit</span>
                     {{!-- <i class="far fa-check-circle"></i> --}}
