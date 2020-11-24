@@ -27,6 +27,11 @@ module.exports = function(app) {
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));
   });
 
+  app.get("/contactus", (req, res) => {
+    res.render("contactus");
+    // res.sendFile(path.join(__dirname, "../public/advertise.html"));
+  });
+
   //signup route, created for now but it can be deleted in the future when all admins are etup, if sign up is successful rediret to login otherwise stay in the page
   app.get("/signup", (req, res) => {
     if (req.user) {
