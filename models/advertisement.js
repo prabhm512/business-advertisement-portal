@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       prodName: {
         type: DataTypes.STRING
       },
-      prodImg: {
-        type: DataTypes.BLOB
-      },
+      // prodImg: {
+      //   type: DataTypes.BLOB
+      // },
       originalPrice: {
         type: DataTypes.INTEGER
       },

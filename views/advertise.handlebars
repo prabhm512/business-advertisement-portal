@@ -120,8 +120,9 @@
                       </div>
                       <input type="text" class="form-control businessEmail is-invalid" placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
+                  </div>
                     <br>
-                    <h2>Advertisement Details</h2>
+                    <h2>Product Details</h2>
                     {{!-- <h2 id="headerTwoAdvertise">Product Details</h2> --}}
                     <div class="mb-3">
                       
@@ -149,13 +150,13 @@
                     <div class="mb-3">
                       <div class="input-group is-invalid">
                         <div class="input-group-prepend">
-                          <label class="input-group-text" for="validatedInputGroupSelect">$</label>
+                          <label class="input-group-text" for="validatedInputGroupSelect">%</label>
                         </div>
                         <input class="form-control discount" type="text" placeholder="Percentage Discount Offered">
                       </div>
                       
                     </div>
-                    <div class="input-group is-invalid">
+                    {{!-- <div class="input-group is-invalid">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input prod-image" id="validatedInputGroupCustomFile" required>
                         <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose Image file...</label>
@@ -164,9 +165,26 @@
                         <button class="btn btn-outline-secondary " type="button">Select</button>
                       </div>
                     </div>
-                    
+                     --}}
+                  </form>
+                  {{!-- New Form needs to be created for image upload. It cannot be inside old form. --}}
+                  <form
+                    class="mt-4"
+                    action="/api/images"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <div class="form-group">
+                      <input
+                        type="file"
+                        name="file"
+                        id="input-files"
+                        class="form-control-file border"
+                      />
                     </div>
-                          <button
+  
+                    {{!-- Submit button needs to be inside image upload form. Not the form with all other inputs --}}
+                    <button
                     class="btn btn-primary  submit-ad"
                     type="submit"
                     id="submit-button"
@@ -182,7 +200,7 @@
             </article>
 
 
-        <footer 
+        {{!-- <footer 
             class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
             id="footerContact">
             <div class="row">
@@ -202,5 +220,5 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
   

@@ -60,7 +60,7 @@ $(document).ready(() => {
         discount: $(".discount")
           .val()
           .trim(),
-        prodImg: $(".prod-image").val(),
+        // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
           .trim()
@@ -150,6 +150,24 @@ $(document).ready(() => {
       type: "PUT",
       data: newState
     }).then(() => location.reload());
+  });
+
+  const imagesPreview = function(input, placeToInsertImagePreview) {
+    if (input.files) {
+      const filesAmount = input.files.length;
+      for (i = 0; i < filesAmount; i++) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          $($.parseHTML("<img>"))
+            .attr("src", event.target.result)
+            .appendTo(placeToInsertImagePreview);
+        };
+        reader.readAsDataURL(input.files[i]);
+      }
+    }
+  };
+  $("#input-files").on("change", function() {
+    imagesPreview(this, "div.preview-images");
   });
 });
 

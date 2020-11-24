@@ -1,6 +1,9 @@
 // const path = require("path");
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/auth");
+const uploadController = require("../controllers/upload");
+const upload = require("../config/middleware/upload");
+
 // html routes
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -53,11 +56,23 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(data => {
-      const adsInDb = {
-        ads: data
-      };
-      res.render("preview", adsInDb);
+    }).then(adsData => {
+      // ID of image will be the same as advertisement because the post to the businesses, advertisements and images table happends together
+      db.Image.findAll({
+        where: {
+          id: req.params.id
+        }
+      }).then(imgsData => {
+        // Convert BLOB data to base64 so that it can be displayed
+        const bufferBase64 = Buffer.from(imgsData);
+        console.log(bufferBase64);
+        const adsInDb = {
+          ads: adsData,
+          img: bufferBase64
+        };
+        console.log(imgsData);
+        res.render("preview", adsInDb);
+      });
     });
   });
 
@@ -68,4 +83,9 @@ module.exports = function(app) {
   app.get("/contact", (req, res) => {
     res.render("contact");
   });
+
+  // app.get("/advertise", homeController.getHome);
+
+  // Post route for image upload
+  app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
 };
