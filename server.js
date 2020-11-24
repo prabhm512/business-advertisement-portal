@@ -9,6 +9,9 @@ const path = require("path");
 const db = require("./models");
 const passport = require("./config/passport");
 const session = require("express-session");
+
+global.__basedir = __dirname;
+
 // Sets up the Express App
 // =============================================================
 const app = express();

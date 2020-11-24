@@ -1,4 +1,5 @@
 const db = require("../models");
+
 // eslint-disable-next-line prefer-const
 let passport = require("../config/passport");
 
@@ -71,9 +72,10 @@ module.exports = function(app) {
       discountedPrice: parseFloat(
         ((100 - req.body.discount) / 100) * req.body.originalPrice
       ),
-      prodImg: req.body.prodImg,
+      // prodImg: req.body.prodImg,
       active: false,
       archive: false,
+      imgName: req.body.imgName,
       BusinessId: businessID
     })
       .then(ads => {

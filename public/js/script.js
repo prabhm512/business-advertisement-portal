@@ -47,6 +47,14 @@ $(document).ready(() => {
           .val()
           .trim()
       };
+      // value of field in C://fakepath/imgName. Just need the imgName part.
+      const relativeImgName = $(".prod-image")
+        .val()
+        .trim()
+        .substr(12);
+
+      console.log(relativeImgName);
+
       const advertisement = {
         prodName: $(".prodName")
           .val()
@@ -60,10 +68,11 @@ $(document).ready(() => {
         discount: $(".discount")
           .val()
           .trim(),
-        prodImg: $(".prod-image").val(),
+        // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim()
+          .trim(),
+        imgName: relativeImgName
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
@@ -79,6 +88,7 @@ $(document).ready(() => {
         $(".prodDesc").val("");
         $(".originalPrice").val("");
         $(".discount").val("");
+        $(".prod-image").val("");
       });
     } else {
       // Changes background colour of email input box to red on entry of an incorrect email
@@ -151,6 +161,24 @@ $(document).ready(() => {
       data: newState
     }).then(() => location.reload());
   });
+
+  // const imagesPreview = function(input, placeToInsertImagePreview) {
+  //   if (input.files) {
+  //     const filesAmount = input.files.length;
+  //     for (i = 0; i < filesAmount; i++) {
+  //       const reader = new FileReader();
+  //       reader.onload = function(event) {
+  //         $($.parseHTML("<img>"))
+  //           .attr("src", event.target.result)
+  //           .appendTo(placeToInsertImagePreview);
+  //       };
+  //       reader.readAsDataURL(input.files[i]);
+  //     }
+  //   }
+  // };
+  // $("#input-files").on("change", function() {
+  //   imagesPreview(this, "div.preview-images");
+  // });
 });
 
 (function() {

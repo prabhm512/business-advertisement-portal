@@ -1,6 +1,9 @@
 // const path = require("path");
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/auth");
+const uploadController = require("../controllers/upload");
+const upload = require("../config/middleware/upload");
+
 // html routes
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -9,13 +12,15 @@ module.exports = function(app) {
       where: {
         active: true
       }
-    }).then(data => {
-      const approvedAds = {
-        approved: data
+    }).then(adsData => {
+      // console.log(adsData);
+      const adsInDb = {
+        approved: adsData
       };
-      res.render("index", approvedAds);
+
+      res.render("index", adsInDb);
+      // res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   app.get("/advertise", (req, res) => {
     res.render("advertise");
@@ -58,9 +63,9 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(data => {
+    }).then(adsData => {
       const adsInDb = {
-        ads: data
+        ads: adsData
       };
       res.render("preview", adsInDb);
     });
@@ -73,4 +78,9 @@ module.exports = function(app) {
   app.get("/contact", (req, res) => {
     res.render("contact");
   });
+
+  // app.get("/advertise", homeController.getHome);
+
+  // Post route for image upload
+  app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
 };

@@ -177,8 +177,9 @@
                       </div>
                       <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
+                  </div>
                     <br>
-                    <h2 id="advertisementDetails">Advertisement Details</h2>
+                    <h2>Product Details</h2>
                     {{!-- <h2 id="headerTwoAdvertise">Product Details</h2> --}}
                     <div class="mb-3">
                       
@@ -212,7 +213,7 @@
                       </div>
                       
                     </div>
-                    <div class="input-group is-invalid">
+                    {{!-- <div class="input-group is-invalid">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input prod-image" id="validatedInputGroupCustomFile" required>
                         <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label>
@@ -223,9 +224,26 @@
                     title="Select an image">Select</button>
                       </div>
                     </div>
-                    
+                     --}}
+                  </form>
+                  {{!-- New Form needs to be created for image upload. It cannot be inside old form. --}}
+                  <form
+                    class="mt-4"
+                    action="/api/images"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <div class="form-group">
+                      <input
+                        type="file"
+                        name="file"
+                        id="input-files"
+                        class="form-control-file border prod-image"
+                      />
                     </div>
-                          <button
+  
+                    {{!-- Submit button needs to be inside image upload form. Not the form with all other inputs --}}
+                    <button
                     class="btn btn-primary  submit-ad"
                     type="submit"
                     id="submit-button"
