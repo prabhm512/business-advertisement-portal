@@ -41,39 +41,102 @@
 
 <div class="container-fluid">
 
-    <div class="row">
+   <header>
+        <div class="row">
 
-        <form action="mailto:aman.kmr4@yahoo.com">
+            <div id="JumboTron" class="jumbotron jumbotron-fluid text-primary"
+                style="background-color: rgb(113, 226, 113); width: 100%">
+                <div class="text-center">
+                    <h1 class="display-4">Business Advertisement Portal</h1>
+                    <p class="lead">We help smaller companies advertise and uplift their products to success</p>
+                    <img src="helping-hand_70921-212.jpg" alt="Placeholder" style="display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;">
+                </div>
+            </div>
+        </div>
+    </header>
 
-            <div class="form-group">
-                <label for="name">Name:
-                </label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="text" name="email" id="email">
-            </div>
-            <div class="form-group">
-                <label for="number">Number</label>
-                <input type="text" name="number" id="number">
-            </div>
-            <div class="form-group">
-                <label for="company">company</label>
-                <input type="text" name="" id="">
-            </div>
-            <div class="form-group">
-                <label for="Email">Email Address:</label>
-                <input type="text" name="" id="">
-            </div>
-            <div class="form-group">
-                <label for="textarea">Reason for contacting us
-                </label>
-                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
 
-            </div>
-        </form>
 
-    </div>
+<article id="articleAdvertise">
+              <div class="container">
+              <div class="container-fluid" id="containerAdvertise">
+                <h2 id="headerTwoAdvertise" style="color: white;">Contact Us</h2>
+                <br><br>
+                <form class="was-validated">
+                    <div class="mb-3">
+                      {{!-- <label for="validationTextarea">Business Name: </label> --}}
+                      <input type="text" placeholder="name" class="form-control businessName is-invalid" id="validationTextarea"  ></input>
+                    </div>
+
+                    <div class="mb-3">
+                    <div class="input-group is-invalid">
+                      <input type="text" class="form-control businessEmail is-invalid" placeholder="phone number" aria-describedby="validatedInputGroupPrepend" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="input-group is-invalid">
+                      <div class="input-group-prepend">
+                        <span  class="input-group-text" id="validatedInputGroupPrepend">Email</span>
+                      </div>
+                      <input type="text" class="form-control businessEmail is-invalid" placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                    </div>
+                  </div>
+                  
+                   <div class="mb-3">
+                    <div class="input-group is-invalid">
+                      <input type="text" class="form-control businessEmail is-invalid" placeholder="company name" aria-describedby="validatedInputGroupPrepend" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="input-group is-invalid">
+                      <input type="text" class="form-control businessEmail is-invalid" placeholder="enquiry" aria-describedby="validatedInputGroupPrepend" required>
+                    </div>
+                  </div>
+
+                  
+
+
+                    
+                          <button
+                    class="btn btn-primary  submit-ad"
+                    type="submit"
+                    id="submit-button"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Submit for admin review!"
+                  ><span style="font-size:18px">Submit</span>
+                    {{!-- <i class="far fa-check-circle"></i> --}}
+                  </button>
+                  </form>
+                </div>
+              </div>
+            </article>
 
 </div>
+
+<footer
+            class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
+            id="footerContact">
+            <div class="row">
+                <div class="col-md">
+                    <small>Copyright &copy; #'s Website 2020</small>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i>Aman
+                                Kumar</a>
+                            <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i>Felipe
+                                Ferreira</a>
+                            <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                    class="fab fa-github"></i>Michael Watt</a>
+                            <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i>Prabh Singh
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
