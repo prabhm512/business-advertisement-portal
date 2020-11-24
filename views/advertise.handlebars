@@ -63,18 +63,18 @@
               height="50"
               alt="businessIcon"
               loading="lazy"
-            />BPA</a>
+            />BAP</a>
           <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
               data-target="#exCollapsingNavbar">
               &#9776;
           </button>
           <div class="collapse navbar-collapse" id="exCollapsingNavbar">
               <ul class="nav navbar-nav ">
-                <li class="nav-item"><a href="/" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/advertise" class="nav-link">Advertise</a></li>
                 <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
-                <li class="nav-item"><a href="#footerContact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
               </ul>
           </div>
       </div>
@@ -90,7 +90,7 @@
                 </div>
             </header>
 
-            <article id="articleAdvertise">
+            <form id="articleAdvertise"class="needs-validation" novalidate>
               <div class="container">
               <div class="container-fluid" id="containerAdvertise">
                 <h2 id="headerTwoAdvertise">Business Details</h2>
@@ -99,8 +99,8 @@
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Business Name: </label> --}}
                       
-                      <input type="text" placeholder="Business Name" class="form-control businessName is-invalid" id="validationTextarea"  ></input>
-                      <div class="invalid-feedback">
+                      <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea"  ></input>
+                      <div class="was-validated">
                         Please enter a valid business name.
                       </div>
                     </div>
@@ -118,7 +118,7 @@
                       <div class="input-group-prepend">
                         <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                       </div>
-                      <input type="text" class="form-control businessEmail is-invalid" placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                      <input type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
                     <br>
                     <h2>Advertisement Details</h2>
@@ -126,12 +126,12 @@
                     <div class="mb-3">
                       
                       {{!-- <label for="validationTextarea">Product Name: </label> --}}
-                      <input class="form-control prodName is-invalid" id="validationTextarea" placeholder="Product Name" ></input>
+                      <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" ></input>
                       
                     </div>
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Product  Description:: </label> --}}
-                      <input class="form-control prodDesc is-invalid" id="validationTextarea" placeholder="Brief Product Description" ></input>
+                      <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" ></input>
                       {{!-- <div class="invalid-feedback">
                         Please enter a valid Product name.
                       </div> --}}
@@ -179,30 +179,30 @@
                   </form>
                 </div>
               </div>
-            </article>
+            </form>
 
 
-
-            <footer class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"  id="footerContact">
-              <div class="row">
-                  <div class="col-md">
-                  <small>Copyright &copy; #'s Website 2020</small>
-                          <ul class="list-unstyled mb-0">
-                              <li>
-                              <a class="github-link" href="https://github.com/#"
-                              ><i class="fab fa-github"></i>Aman Kumar</a
-                              >
-                              <a class="github-link" href="https://github.com/#"
-                              ><i class="fab fa-github"></i>Felipe Ferreira</a
-                              >
-                              <a class="github-link" href="https://github.com/Michaelmw17"
-                              ><i class="fab fa-github"></i>Michael Watt</a
-                              >
-                              <a class="github-link" href="https://github.com/#"
-                              ><i class="fab fa-github"></i>Prabh Singh
-                              </a
-                              >
-                          </li>
+        <footer 
+            class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
+            id="footerContact">
+            <div class="row">
+                <div class="col-md">
+                    <small>Copyright &copy; #'s Website 2020</small>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i>Aman
+                                Kumar</a>
+                            <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i>Felipe
+                                Ferreira</a>
+                            <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                    class="fab fa-github"></i>Michael Watt</a>
+                            <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i>Prabh Singh
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
                           </ul>
                   </div>
               </div>
