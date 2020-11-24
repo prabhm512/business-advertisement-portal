@@ -11,11 +11,11 @@ const uploadFiles = async (req, res) => {
       return res.send("You must select a file.");
     }
     // This give a unique id to every image
-    const uniqueID = req.file.filename.split("-")[0];
+    // const uniqueID = req.file.filename.split("-")[0];
 
     db.Image.create({
       type: req.file.mimetype,
-      name: uniqueID + "-" + req.file.originalname,
+      name: req.file.originalname,
       data: fs.readFileSync(
         __basedir + "/public/images/uploads/" + req.file.filename
       )

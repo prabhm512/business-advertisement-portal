@@ -75,6 +75,7 @@ module.exports = function(app) {
       // prodImg: req.body.prodImg,
       active: false,
       archive: false,
+      imgName: req.body.imgName,
       BusinessId: businessID
     })
       .then(ads => {

@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
       archive: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+      },
+      imgName: {
+        type: DataTypes.STRING
       }
     },
     {

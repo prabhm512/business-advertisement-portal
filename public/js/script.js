@@ -47,6 +47,14 @@ $(document).ready(() => {
           .val()
           .trim()
       };
+      // value of field in C://fakepath/imgName. Just need the imgName part.
+      const relativeImgName = $(".prod-image")
+        .val()
+        .trim()
+        .substr(12);
+
+      console.log(relativeImgName);
+
       const advertisement = {
         prodName: $(".prodName")
           .val()
@@ -63,7 +71,8 @@ $(document).ready(() => {
         // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim()
+          .trim(),
+        imgName: relativeImgName
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements

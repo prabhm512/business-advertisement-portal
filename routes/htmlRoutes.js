@@ -12,13 +12,15 @@ module.exports = function(app) {
       where: {
         active: true
       }
-    }).then(data => {
-      const approvedAds = {
-        approved: data
+    }).then(adsData => {
+      // console.log(adsData);
+      const adsInDb = {
+        approved: adsData
       };
-      res.render("index", approvedAds);
+
+      res.render("index", adsInDb);
+      // res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   app.get("/advertise", (req, res) => {
     res.render("advertise");
@@ -57,19 +59,10 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(adsData => {
-      // ID of image will be the same as advertisement because the post to the businesses, advertisements and images table happends together
-      db.Image.findAll({
-        where: {
-          id: req.params.id
-        }
-      }).then(imgsData => {
-        console.log(imgsData[0]);
-        const adsInDb = {
-          ads: adsData,
-          img: imgsData[0]
-        };
-        res.render("preview", adsInDb);
-      });
+      const adsInDb = {
+        ads: adsData
+      };
+      res.render("preview", adsInDb);
     });
   });
 
