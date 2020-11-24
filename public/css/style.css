@@ -7,8 +7,12 @@
   
 body {
     font-family: 'Alegreya Sans', sans-serif;
-    background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d);
+    /* background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d); */
     font-size: large;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+	animation: gradient 15s ease infinite;
     
 }
 .submit-ad {
@@ -28,7 +32,10 @@ padding: 20px;
 }
 
 #jumboTron {
-    background-color: #f4ef6c; 
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+	        animation: gradient 15s ease infinite;
     padding: 35px;
     
 }
@@ -37,7 +44,10 @@ padding: 20px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
-    background-color: #f4ef6c; 
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+	        animation: gradient 15s ease infinite;
 }
 #mainImage {
     display: flex;
@@ -57,16 +67,14 @@ padding: 20px;
 }
 /* secondTitle  */
 #footerContact {
-    
     bottom: 0;
-    background-color: #f0f;
+    background-color: rgb(98, 98, 98);
     height: 80px;
     bottom: 0;
     left: 0;
     right: 0;
 }
 #submit-button {
-        float: right;
         padding: 10px;
         border-radius: 10px;
         -moz-border-radius: 10px;
@@ -186,4 +194,30 @@ padding: 20px;
 }
 #cardholder {
     padding-top: 20px;
+}
+
+
+
+@-webkit-keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
