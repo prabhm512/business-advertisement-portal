@@ -25,11 +25,11 @@ body {
 #articleAdvertise{
 padding: 20px;
 }
-#containerAdvertise {
+/* #containerAdvertise {
     background: wheat;
     border-radius: 15px;
     
-}
+} */
 
 #footerContact {
     position: relative; 
@@ -41,6 +41,7 @@ padding: 20px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
+    background-color: rgb(113, 226, 113)
 }
 #mainImage {
     display: flex;
@@ -74,7 +75,6 @@ padding: 20px;
     font-weight: bolder;
 }
 #containerAdvertise {
-    background: white;
     text-align: center;
     padding-bottom: 60px;
 }
