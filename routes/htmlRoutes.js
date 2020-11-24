@@ -63,14 +63,11 @@ module.exports = function(app) {
           id: req.params.id
         }
       }).then(imgsData => {
-        // Convert BLOB data to base64 so that it can be displayed
-        const bufferBase64 = Buffer.from(imgsData);
-        console.log(bufferBase64);
+        console.log(imgsData[0]);
         const adsInDb = {
           ads: adsData,
-          img: bufferBase64
+          img: imgsData[0]
         };
-        console.log(imgsData);
         res.render("preview", adsInDb);
       });
     });

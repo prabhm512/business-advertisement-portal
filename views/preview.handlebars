@@ -1,15 +1,18 @@
-{{#each ads}}
+{{!-- {{#each ads}} --}}
     {{!-- Show sample card on hovering over entry --}}
     <div class="row">
         <div class="row-xs-12 row-sm-12 row-md-6 ">
             <div class="card  m-3 mx-auto" style="width: 19rem;">
             <div class="card-header text-white bg-primary">
+                {{#each ads}}
                 <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
                 <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
+                {{/each}}
             </div>
             <div class="card-body bg-light text-dark">
-                <img src="https://via.placeholder.com/150" alt="Placeholder"
+                <img src="/images/tmp/{{img.dataValues.name}}" alt="Placeholder"
                     sizes="(min-width: 256px) 114px, 350px" srcset="" width="262" height="204">
+                    {{#each ads}}
                 <ul class="list-group product-details">
                     <li class="list-group-item">{{this.dataValues.prodName}}</li>
                     <li class="list-group-item"><span class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span>   <span class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span></li>
@@ -18,8 +21,9 @@
                     {{!-- <li class="list-group-item" style="font-size: 15px;"></li> --}}
                     {{!-- </li> --}}
                 </ul>
+                    {{/each}}
             </div>
         </div>
         </div>
     </div>
-{{/each}}
+{{!-- {{/each}} --}}
