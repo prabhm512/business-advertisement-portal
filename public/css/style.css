@@ -27,12 +27,17 @@ body {
 padding: 20px;
 }
 
+#jumboTron {
+    background-color: #f4ef6c; 
+    padding: 35px;
+    
+}
 #jumboTronIndex {
     padding-top: 60px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
-    background-color: rgb(113, 226, 113)
+    background-color: #f4ef6c; 
 }
 #mainImage {
     display: flex;
@@ -41,6 +46,10 @@ padding: 20px;
     width: 50%;
     border-radius: 20px;
     
+}
+.lead{
+    text-align: center;
+    font-size: 23px;
 }
 #secondTitleMain { 
     background-color: grey;
@@ -58,15 +67,24 @@ padding: 20px;
     right: 0;
 }
 #submit-button {
-    float: right;
-    padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+        float: right;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        color: #494949 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 20px;
+        border: 4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
 }
 .display-4 {
     padding-top: 60px;
     font-weight: bolder;
+    font-size: 40px;
 }
 #containerAdvertise {
     text-align: center;
@@ -153,5 +171,20 @@ padding: 20px;
 #submit-button:hover {
   cursor: pointer;
   color: red;
-  background-color: darkblue;
+  background-color: rgb(21, 255, 0);
+}
+#whoWeSupport {
+   font-size: 30px;
+   color:#007bff;
+   border-radius: 20px;
+}
+#business-img{
+    border-radius: 20px;
+}
+#categorySelect {
+    width: 50%;
+    
+}
+#cardholder {
+    padding-top: 20px;
 }

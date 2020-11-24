@@ -15,10 +15,10 @@
             <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                 <ul class="nav navbar-nav ">
                     <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
-                    <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
-                    <li class="nav-item"><a href="/contactus" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
+                        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                        
                     <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
                 </ul>
             </div>
@@ -30,48 +30,60 @@
 <!-- Nav End-->
 
 <!-- Header Start -->
-<div class="container-fluid">
+
     <header>
         <div class="row">
-
-            <div id="JumboTron" class="jumbotron jumbotron-fluid text-primary"
-                style="background-color: rgb(113, 226, 113); width: 100%">
+    <div class="container-fluid">
+            <div id="jumboTron" class="jumbotron jumbotron-fluid text-primary"
+                >
                 <div class="text-center">
-                    <h1 class="display-4">Business Advertisement Portal</h1>
+                        <h1 class="display-4">Business Advertisement Portal</h1><img
+                    src="./assets/images/pexels-photo-3184418.jpeg"
+                    alt="Example testing img"
+                    class="img-position"
+                    id="business-img"
+                />
                     <p class="lead">We help smaller companies advertise and uplift their products to success</p>
-                    <img src="helping-hand_70921-212.jpg" alt="Placeholder" style="display: flex;
+                    {{!-- <img src="styling test/helping-hand_70921-212.jpg" alt="Placeholder" style="display: flex;
                 margin-left: auto;
                 margin-right: auto;
-                width: 50%;">
+                width: 50%;"> --}}<p class="mx-auto my-auto" id="whoWeSupport">Who we support</p>
+                            <div class="row">
+                        <div class="col-sm text-center mb-2">
+                            <form>
+                                {{!-- <label  for="ice-cream-choice">Choose a Category:</label> --}}
+                                <select id="categorySelect" class="browser-default custom-select">
+                                    <option selected>Choose a Category:</option>
+                                    <option value="1">Technology</option>
+                                    <option value="2">Foods</option>
+                                    <option value="3">Clothing</option>
+                                    </select>
+                                {{!-- <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+                                <datalist id="ice-cream-flavors">
+                                    <option value="technology">
+                                    <option value="foods">
+                                    <option value="clothing">
+                                </datalist> --}}
+                            </form>
+                        </div>
+                    </div>
                 </div>
+            </div>
             </div>
         </div>
     </header>
+    
 
 
-    <div class="text-white">
+    {{!-- <div class="text-white">
         <div class="row" style="height: 80px;">
-            <p class="mx-auto my-auto" style="font-size: 30px;">Who we support</p>
+            
 
         </div>
-        <br>
+        <br> --}}
         <!-- Search form -->
-        <div class="row">
-            <div class="col-sm text-center mb-2">
-                <form>
-                    <label for="ice-cream-choice">Choose a Category:</label>
-                    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-
-                    <datalist id="ice-cream-flavors">
-                        <option value="technology">
-                        <option value="foods">
-                        <option value="clothing">
-                    </datalist>
-                </form>
-            </div>
-        </div>
-    </div>
-
+        
 
 
     <div class="row" id="cardholder">
