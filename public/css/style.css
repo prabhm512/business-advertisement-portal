@@ -9,6 +9,7 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d);
     font-size: large;
+    
 }
 .submit-ad {
     margin-top: 10px;
@@ -58,9 +59,14 @@ padding: 20px;
 }
 /* secondTitle  */
 #footerContact {
-    position: relative; 
-    clear:both; 
-    padding-top:20px;
+  
+     position: fixed;
+    bottom: 0;
+    background-color: #f0f;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 #submit-button {
    
@@ -141,4 +147,3 @@ padding: 20px;
 .description {
     font-size: 16px;
 }
-

@@ -66,6 +66,7 @@
         <p class="mx-auto my-auto" style="font-size: 30px; color: #fcfafa;">Who we support</p>
 
     </div>
+    </div>
     <br>
     <!-- Search form -->
     <div class="row">
@@ -84,8 +85,9 @@
     </div>
 
  <div class="row">
+     <div class="col">
         {{#each approved}}
-        <div class="col-md-5 col-lg-4">
+        <div class="row-sm-12 row-md-6">
             <div class="card m-3 mx-auto" style="width: 19rem;">
                 
                 <div class="card-header text-white bg-primary">
@@ -111,12 +113,14 @@
         </div>
         </div>
         </div>
+       
         {{/each}}
 
-
+    
         <footer 
             class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
             id="footerContact">
+            <div class="container-fluid">
             <div class="row">
                 <div class="col-md">
                     <small>Copyright &copy; #'s Website 2020</small>
@@ -133,5 +137,6 @@
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
         </footer>
