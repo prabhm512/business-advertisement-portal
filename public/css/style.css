@@ -9,6 +9,7 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d);
     font-size: large;
+    
 }
 .submit-ad {
     margin-top: 10px;
@@ -25,11 +26,11 @@ body {
 #articleAdvertise{
 padding: 20px;
 }
-#containerAdvertise {
+/* #containerAdvertise {
     background: wheat;
     border-radius: 15px;
-
-}
+    
+} */
 
 #footerContact {
     position: relative; 
@@ -41,6 +42,7 @@ padding: 20px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
+    background-color: rgb(113, 226, 113)
 }
 #mainImage {
     display: flex;
@@ -57,9 +59,14 @@ padding: 20px;
 }
 /* secondTitle  */
 #footerContact {
-    position: relative; 
-    clear:both; 
-    padding-top:20px;
+  
+     position: fixed;
+    bottom: 0;
+    background-color: #f0f;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 #submit-button {
    
@@ -74,8 +81,8 @@ padding: 20px;
     font-weight: bolder;
 }
 #containerAdvertise {
-    background: white;
     text-align: center;
+    padding-bottom: 60px;
 }
 #headerTwoAdvertise {
     text-align: center;
@@ -94,6 +101,17 @@ padding: 20px;
     width: 21.5em;margin:0 auto;
     text-align: center;
 }
+
+.admin-heading {
+    font-size: 40px;
+    color: white;
+    margin: auto;
+}
+
+.admin-options li {
+    color: white;
+}
+
 .pending-list {
     list-style-position: inside;
 }

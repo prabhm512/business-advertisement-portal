@@ -40,10 +40,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       active: {
         type: DataTypes.BOOLEAN
+      },
+      archive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
-      // archive: {
-      //   type: DataTypes.BOOLEAN
-      // }
     },
     {
       sequelize,

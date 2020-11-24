@@ -1,56 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity: 85%;background-color: #e3f2fd">
-    <a class="navbar-brand" href="#">BAP (Brand)</a>
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-        &#9776;
-    </button>
-    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-        <ul class="nav navbar-nav ">
-            <li class="nav-item"><a href="#JumboTron" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
-            <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
-            <li class="nav-item"><a href="#footerContact" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
-            <li>
-                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                    <!-- <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li> -->
-                    <li class="dropdown order-1">
-                        <button type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right mt-2">
-                            <li class="px-3 py-2">
-                                <form class="form">
-                                    <div class="form-group">
-                                        <input id="emailInput" placeholder="Email" class="form-control form-control-sm"
-                                            type="text" required="">
 
-                                    </div>
-                                    <div class="form-group">
-                                        <input id="passwordInput" placeholder="Password"
-                                            class="form-control form-control-sm" type="text" required="">
-                                    </div>
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar" >
+      <div class="container">
+          <a class="navbar-brand" href="/"><img
+              src="./assets/images/download-removebg-preview.png"
+              width="50"
+              height="50"
+              alt="businessIcon"
+              loading="lazy"
+            />BPA</a>
+          <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+              data-target="#exCollapsingNavbar">
+              &#9776;
+          </button>
+          <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+              <ul class="nav navbar-nav ">
+                <li class="nav-item"><a href="/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
+                <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
+                <li class="nav-item"><a href="#footerContact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                    </div>
-                                    <div class="form-group text-center">
-                                        <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot
-                                                password?</a></small>
-
-                                    </div>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-</nav>
-
-
-
-</nav>
 <!-- Nav End/-->
 <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
@@ -93,6 +66,7 @@
         </div>
     </header>
 
+
     <div class="text-white">
         <div class="row" style="height: 80px;">
             <p class="mx-auto my-auto" style="font-size: 30px;">Who we support</p>
@@ -122,6 +96,7 @@
         {{#each approved}}
         <div class="col-lg-4">
             <div class="card mb-2" style="width: 19rem;">
+
                 <div class="card-header text-white bg-primary">
                     <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
                     <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
@@ -143,29 +118,33 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+       
         {{/each}}
 
-
-    </div>
-
-    <footer style="position: relative; clear:both; padding-top:20px;"
-        class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom" id="footerContact">
-        <div class="row">
-            <div class="col-md">
-                <small>Copyright &copy; #'s Website 2020</small>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Aman
-                            Kumar</a>
-                        <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Felipe
-                            Ferreira</a>
-                        <a class="github-link" href="https://github.com/Michaelmw17"><i
-                                class="fab fa-github"></i>Michael Watt</a>
-                        <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Prabh Singh
-                        </a>
-                    </li>
-                </ul>
+    
+        <footer 
+            class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
+            id="footerContact">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-md">
+                    <small>Copyright &copy; #'s Website 2020</small>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Aman
+                                Kumar</a>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Felipe
+                                Ferreira</a>
+                            <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                    class="fab fa-github"></i>Michael Watt</a>
+                            <a class="github-link" href="https://github.com/#"><i class="fab fa-github"></i>Prabh Singh
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </footer>
-</div>
+            </div>
+        </footer>
+
