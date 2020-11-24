@@ -54,6 +54,62 @@
         </div>
     </div>
 </div> --}}
+{{!-- <div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>Advertise your Business</h1>
+        </div>
+    </div>
+    <h2>Business Details</h2>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control businessName" type="text" placeholder="Business Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control businessCategory" type="text" placeholder="Business Category">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control businessEmail" type="text" placeholder="Business Email">
+        </div>
+    </div>
+
+    <h2>Product Details</h2>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control prodName" type="text" placeholder="Product Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control prodDesc" type="text" placeholder="Product Description">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control originalPrice" type="text" placeholder="Original Price">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <input class="form-control discount" type="text" placeholder="Discount offered">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <label for="exampleFormControlFile1">Product Image</label>
+            <input type="file" class="form-control-file prod-image" id="exampleFormControlFile1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <button type="button" class="btn btn-primary submit-ad">Submit</button>
+        </div>
+    </div>
+</div> --}}
 
   <nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar" >
       <div class="container">
@@ -74,7 +130,7 @@
                 <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/advertise" class="nav-link">Advertisement</a></li>
                 <!-- <li class="nav-item"><a href="#" class="nav-link">Sign up/Sign in</a></li> -->
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/contactus" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li>
               </ul>
           </div>
@@ -100,7 +156,7 @@
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Business Name: </label> --}}
                       
-                      <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea" data-toggle="tooltip" data-placement="left" title="Please enter a vaild business name"  required></input>
+                      <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea" data-toggle="tooltip" data-placement="left" title="Please enter a valid business name"  required></input>
                       <div class="was-validated">
                         Please enter a valid business name.
                       </div>
@@ -110,7 +166,7 @@
                         <div class="input-group-prepend">
                           
                         </div>
-                        <input data-toggle="tooltip" data-placement="left" title="Please enter a vaild business category" class="form-control businessCategory" type="text" placeholder="Business Category">
+                        <input data-toggle="tooltip" data-placement="left" title="Please enter a valid business category" class="form-control businessCategory" type="text" placeholder="Business Category">
                       </div>
                       
                     </div>
@@ -119,7 +175,7 @@
                       <div class="input-group-prepend">
                         <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                       </div>
-                      <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a vaild business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                      <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
                     </div>
                     <br>
                     <h2 id="advertisementDetails">Advertisement Details</h2>
@@ -132,7 +188,7 @@
                     </div>
                     <div class="mb-3">
                       {{!-- <label for="validationTextarea">Product  Description:: </label> --}}
-                      <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a vaild Product Description" ></input>
+                      <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" ></input>
                       {{!-- <div class="invalid-feedback">
                         Please enter a valid Product name.
                       </div> --}}
