@@ -57,6 +57,7 @@ padding: 20px;
 .lead{
     text-align: center;
     font-size: 23px;
+    color: white;
 }
 #secondTitleMain { 
     background-color: grey;
@@ -84,10 +85,10 @@ padding: 20px;
         transition: all 0.4s ease 0s;
 }
 .display-4 {
-    padding-top: 60px;
+    padding-top: 70px;
     font-weight: bolder;
     font-size: 40px;
-    padding-top: 30px;
+    color: white;
 }
 #containerAdvertise {
     text-align: center;
