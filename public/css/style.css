@@ -15,8 +15,9 @@ body {
     
 }
 .submit-ad {
-    margin-top: 10px;
-    float: right;
+    /* margin-top: 10px;
+    float: right; */
+    font-size: 20px;
 }
 
 #navBar {

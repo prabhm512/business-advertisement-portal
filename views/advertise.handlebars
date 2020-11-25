@@ -66,7 +66,8 @@
                         </div>
                     </div>
                         <br>
-                        <h2>Product Details</h2>
+                        <h2 id="headerTwoAdvertise">Product Details</h2>
+                        <br><br>
                         {{!-- <h2 id="headerTwoAdvertise">Product Details</h2> --}}
                         <div class="mb-3">
                         
@@ -118,50 +119,18 @@
                         action="/api/images"
                         method="POST"
                         enctype="multipart/form-data">
-                        <div class="input-group is-invalid">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input prod-image" id="input-files validatedInputGroupCustomFile" required>
-                            <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label>
-                        </div>
-                        <div class="input-group-append prod-image">
-                            <button class="btn btn-outline-secondary " type="button" data-toggle="tooltip" id="submit-button"
-                        data-placement="bottom"
-                        title="Submit  an image">Submit</button>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                    </form>
-                        <form
-                        class="mt-4"
-                        action="/api/images"
-                        method="POST"
-                        enctype="multipart/form-data"
-                        >
                         <div class="form-group">
-                        <input
-                            type="file"
-                            name="file"
-                            id="input-files"
-                            class="form-control-file border prod-image"
-                            />
-                        </div> 
+                            <input type="file" name="file" class="form-control-file border prod-image" id="input-files validatedInputGroupCustomFile" required>
+                            {{!-- <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label> --}}
+                        </div>
+                        {{!-- Do not change the type of this button. It must be "submit" --}}
+                        <button class="btn btn-outline-primary submit-ad" type="submit" data-toggle="tooltip" id="submit-button"
+                        data-placement="bottom"
+                        title="Submit Advertisement!">Submit</button>
                     </form>
-                        {{!-- Submit button needs to be inside image upload form. Not the form with all other inputs --}}
-                        {{!-- <button
-                        class="btn btn-primary  submit-ad"
-                        type="submit"
-                        id="submit-button"
-                        data-toggle="tooltip"
-                        data-placement="right"
-                        title="Submit for admin review!"
-                    ><span style="font-size:18px">Submit</span>
-                    </button> --}}
-                    {{!-- 
-                    </div>
-                </div>
-            </form> --}}
-
+                      </div>
+                      </div>
+                  </form>
 
         <footer 
             class="footer  mt-4 py-3 container-fluid text-white bg-secondary text-center "
