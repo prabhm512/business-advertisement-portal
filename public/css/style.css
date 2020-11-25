@@ -3,11 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-  }
-  
+}
+
 body {
     font-family: 'Alegreya Sans', sans-serif;
-    /* background: linear-gradient(0.25turn, rgb(142, 142, 238), rgba(116, 171, 243, 0.507), #4db9eb4d); */
     font-size: large;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
@@ -24,9 +23,7 @@ body {
     opacity: 85%;
 }
 
-.display-4 { 
-    padding-top: 30px;
-}
+
 #articleAdvertise{
 padding: 20px;
 }
@@ -35,8 +32,8 @@ padding: 20px;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
-	        animation: gradient 15s ease infinite;
-    padding: 35px;
+	animation: gradient 15s ease infinite;
+    padding: 45px;
     
 }
 #jumboTronIndex {
@@ -44,10 +41,10 @@ padding: 20px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
-   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
-	        animation: gradient 15s ease infinite;
+	animation: gradient 15s ease infinite;
 }
 #mainImage {
     display: flex;
@@ -75,7 +72,7 @@ padding: 20px;
     right: 0;
 }
 #submit-button {
-        padding: 10px;
+        padding: 7px;
         border-radius: 10px;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
@@ -83,8 +80,6 @@ padding: 20px;
         text-transform: uppercase;
         text-decoration: none;
         background: #ffffff;
-        padding: 10px;
-        border: 4px solid #494949 !important;
         display: inline-block;
         transition: all 0.4s ease 0s;
 }
@@ -92,6 +87,7 @@ padding: 20px;
     padding-top: 60px;
     font-weight: bolder;
     font-size: 40px;
+    padding-top: 30px;
 }
 #containerAdvertise {
     text-align: center;
@@ -101,17 +97,16 @@ padding: 20px;
     text-align: center;
     border-radius: 20px;
     display: inline;
-    
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bolder;
 }
 .invalid-feedback {
-
     font-size: 13px;
 }
 .card {
-    width: 21.5em;margin:0 auto;
+    width: 21.5em;
+    margin:0 auto;
     text-align: center;
 }
 
@@ -182,7 +177,7 @@ padding: 20px;
 }
 #whoWeSupport {
    font-size: 30px;
-   color:#007bff;
+   color:yellow;
    border-radius: 20px;
 }
 #business-img{
