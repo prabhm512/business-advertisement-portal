@@ -13,15 +13,32 @@ module.exports = function(app) {
         active: true
       }
     }).then(adsData => {
-      // console.log(adsData);
       const adsInDb = {
         approved: adsData
       };
-
       res.render("index", adsInDb);
       // res.sendFile(path.join(__dirname, "../public/index.html"));
     });
   });
+
+  // get ads by category
+  app.get("/category/:category", (req, res) => {
+    db.Advertisement.findAll({
+      include: [db.Business],
+      where: {
+        active: true
+      }
+    }).then(ads => {
+      const filteredRes = ads.filter(
+        ad => ad.Business.bussCategory === req.params.category
+      );
+      const adsByCat = {
+        adCat: filteredRes
+      };
+      res.render("category", adsByCat);
+    });
+  });
+
   app.get("/advertise", (req, res) => {
     res.render("advertise");
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));

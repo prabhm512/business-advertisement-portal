@@ -53,8 +53,8 @@
                         <div class="col-sm text-center mb-2">
                             <form>
                                 {{!-- <label  for="ice-cream-choice">Choose a Category:</label> --}}
-                                <select id="categorySelect" class="browser-default custom-select">
-                                  <option selected value="">Choose a Category:</option>
+                                {{!-- <select id="categorySelect" class="browser-default custom-select">
+                                 <option selected value="">Choose a Category:</option>
                                     <option value="Technology">Technology</option>
                                     <option value="Food">Food</option>
                                     <option value="Clothing">Clothing</option>
@@ -62,7 +62,7 @@
                                     <option value="Fitness">Fitness</option>
                                     <option value="Home">Home</option>
                                     <option value="Others">Others</option>
-                                    </select>
+                                    </select> --}}
                                 {{!-- <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
 
                                 <datalist id="ice-cream-flavors">
@@ -92,7 +92,7 @@
 
     <div class="row" id="cardholder">
         {{!-- Render all cards which are active --}}
-        {{#each approved}}
+        {{#each adCat}}
         <div class="col-lg-4">
             <div class="card mb-2" style="width: 19rem;">
                 <div class="card-header text-white bg-primary"> 

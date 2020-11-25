@@ -1,15 +1,21 @@
 $(document).ready(() => {
-  /// api get
-  getAds = () => {
+  $("#categorySelect").change(function() {
+    getAds($(this).val());
+  });
+
+  getAds = category => {
+    let categoryString = category || "";
+    if (categoryString) {
+      categoryString = "/category/" + category;
+    }
     $.ajax({
       method: "GET",
-      url: "/api/advertisements"
-    }).then(res => {
-      console.log(res);
+      url: categoryString
+    }).then(() => {
+      const url = document.location;
+      document.location = url + "category/" + category;
     });
   };
-  // get the adds that are currently in the db
-  getAds();
 
   getBusinesses = () => {
     $.ajax({
@@ -53,7 +59,7 @@ $(document).ready(() => {
         .trim()
         .substr(12);
 
-      console.log(relativeImgName);
+      // console.log(relativeImgName);
 
       const advertisement = {
         prodName: $(".prodName")

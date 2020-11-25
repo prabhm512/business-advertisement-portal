@@ -44,7 +44,7 @@ module.exports = function(app) {
       bussEmail: req.body.bussEmail
     })
       .then(bus => {
-        console.log(bus);
+        // console.log(bus);
         res.json(bus);
       })
       .catch(err => res.json(err));
@@ -86,9 +86,11 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
+  
+
   // Delete the advertisement from the table
   app.delete("/api/advertisements/:id", (req, res) => {
-    db.Advertisement.destroy({
+    db.Bus.destroy({
       where: {
         id: req.params.id
       }
