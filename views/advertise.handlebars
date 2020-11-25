@@ -125,7 +125,7 @@
                         </div>
                         <div class="input-group-append prod-image">
                             <button class="btn btn-outline-secondary " type="button" data-toggle="tooltip" id="submit-button"
-                        data-placement="bottom"
+                        data-placement="right"
                         title="Submit  an image">Submit</button>
                         </div>
                         </div>
@@ -137,16 +137,16 @@
                         action="/api/images"
                         method="POST"
                         enctype="multipart/form-data"
-                        >
+                    >
                         <div class="form-group">
                         <input
                             type="file"
                             name="file"
                             id="input-files"
                             class="form-control-file border prod-image"
-                            />
+                        />
                         </div> 
-                    </form>
+                        </form>
                         {{!-- Submit button needs to be inside image upload form. Not the form with all other inputs --}}
                         {{!-- <button
                         class="btn btn-primary  submit-ad"
