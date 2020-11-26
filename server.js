@@ -4,6 +4,9 @@
 
 // Dependencies
 // =============================================================
+//ENABLE if you want to use your own local environmental variables.
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const db = require("./models");
