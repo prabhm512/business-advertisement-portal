@@ -88,7 +88,7 @@ module.exports = function(app) {
 
   // Delete the advertisement from the table
   app.delete("/api/advertisements/:id", (req, res) => {
-    db.Bus.destroy({
+    db.Advertisement.destroy({
       where: {
         id: req.params.id
       }
