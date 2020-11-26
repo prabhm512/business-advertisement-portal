@@ -46,7 +46,7 @@
         <div class="col-sm"></div>
         <div class="col-sm"></div>
         <div class="col-lg text-center">
-            <form>
+            <form class="ml-4" style="padding-left: 25px;">
                 <select id="categorySelect" class="browser-default custom-select">
                     <option selected value="">Choose a Category:</option>
                     <option value="Technology">Technology</option>
@@ -59,6 +59,35 @@
                 </select>
             </form>
         </div>
+    </div>
+    <div class="row" id="cardholder">
+        <hr>
+        {{!-- Render all cards which are active --}}
+        {{#each approved}}
+        <div class="col-lg-4">
+            <div class="card mb-2" style="width: 19rem;">
+                <div class="card-header text-white bg-primary">
+                    <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
+                    <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
+                </div>
+                <div class="card-body bg-light text-dark">
+                    <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder"
+                        sizes="(min-width: 256px) 114px, 350px" srcset="" width="262" height="204">
+                    <ul class="list-group product-details">
+                        <li class="list-group-item">{{this.dataValues.prodName}}</li>
+                        <li class="list-group-item"><span
+                                class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span> <span
+                                class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span>
+                        </li>
+                        <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
+                        <li class="list-group-item description">{{this.dataValues.description}}</li>
+                        <li class="list-group-item webLink"><a target="_blank"
+                                href="http://{{this.dataValues.webLink}}">View website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 
 </div>
