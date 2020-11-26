@@ -1,115 +1,117 @@
-    <nav  class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navBar" >
-            <div class="container">
-                <a class="navbar-brand" href="/"><img
-                    src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
-                    width="60"
-                    height="60"
-                    alt="businessIcon"
-                    loading="lazy"
-                    /></a>
-                <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
-                    data-target="#exCollapsingNavbar">
-                    &#9776;
-                </button>
-            <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-                <ul class="nav navbar-nav ">
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="/advertise" class="nav-link">Advertise</a></li>
-                        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-                        {{!-- <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li> --}}
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navBar">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
+                width="60" height="60" alt="businessIcon" loading="lazy" /></a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav ">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/advertise" class="nav-link">Advertise</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                {{!-- <li class="nav-item"><a href="/login" class="nav-link">Admin</a></li> --}}
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 <!-- Nav End-->
 
 <!-- Header Start -->
 
-    <header>
-        <div class="row">
+<header>
+    <div class="row">
         <div class="container-fluid">
             <div id="jumboTron" class="jumbotron jumbotron-fluid text-primary">
                 <div class="text-center">
-                    <img
-                    src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
-                    alt="Example testing img"
-                    class="img-position"
-                    id="business-img"
-                    /><h1 id="display-4-header" class="display-4">Business Advertisement Portal</h1>
+                    <img src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
+                        alt="Example testing img" class="img-position" id="business-img" />
+                    <h1 id="display-4-header" class="display-4">Business Advertisement Portal</h1>
                     <p class="lead">We help smaller companies advertise and uplift their products to success</p>
-                            <div class="row">
-                        <div class="col-sm text-center mb-2">
-                            <form>
-                                <select id="categorySelect" class="browser-default custom-select">
-                                <option selected value="">Choose a Category:</option>
-                                    <option value="Technology">Technology</option>
-                                    <option value="Food">Food</option>
-                                    <option value="Clothing">Clothing</option>
-                                    <option value="Beauty">Beauty</option>
-                                    <option value="Fitness">Fitness</option>
-                                    <option value="Home">Home</option>
-                                    <option value="Others">Others</option>
-                                    </select>
-                            </form>
-                        </div>
-                    </div>
                 </div>
-            </div>
             </div>
         </div>
-    </header>
+    </div>
 
-        <div class="row" id="cardholder">
-            <hr>
-            {{!-- Render all cards which are active --}}
-            {{#each approved}}
-            <div class="col-lg-4">
-                    <div class="card mb-2" style="width: 19rem;">
-                        <div class="card-header text-white bg-primary"> 
-                            <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
-                            <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
-                        </div>
-                    <div class="card-body bg-light text-dark">
-                        <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder" sizes="(min-width: 256px) 114px, 350px"
-                            srcset="" width="262" height="204">
-                            <ul class="list-group product-details">
-                                <li class="list-group-item">{{this.dataValues.prodName}}</li>
-                                <li class="list-group-item"><span
-                                        class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span> <span
-                                        class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span>
-                                </li>
-                                <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
-                                <li class="list-group-item description">{{this.dataValues.description}}</li>
-                                <li class="list-group-item webLink"><a target="_blank" href="http://{{this.dataValues.webLink}}">View website</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        {{/each}}
+</header>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-md-auto text-center">
+            <h3>Who we support</h3>
+        </div>
+        <div class="col-sm mb-2">
+            <form>
+                <select id="categorySelect" class="browser-default custom-select">
+                    <option selected value="">Choose a Category:</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Food">Food</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Home">Home</option>
+                    <option value="Others">Others</option>
+                </select>
+            </form>
+        </div>
     </div>
 </div>
-    <div class="d-flex flex-column min-vh-100">
-            <footer class="footer  mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
-                id="footerContact">
-                <div class="row">
-                    <div class="col-md">
-                        <small>Copyright &copy; Advertisement Portal's Website 2020</small>
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i>Aman
-                                    Kumar</a>
-                                <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i>Felipe
-                                    Ferreira</a>
-                                <a class="github-link" href="https://github.com/Michaelmw17"><i
-                                        class="fab fa-github"></i>Michael Watt</a>
-                                <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i>Prabh Singh
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
+<div class="row" id="cardholder">
+    <hr>
+    {{!-- Render all cards which are active --}}
+    {{#each approved}}
+    <div class="col-lg-4">
+        <div class="card mb-2" style="width: 19rem;">
+            <div class="card-header text-white bg-primary">
+                <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
+                <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
+            </div>
+            <div class="card-body bg-light text-dark">
+                <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder"
+                    sizes="(min-width: 256px) 114px, 350px" srcset="" width="262" height="204">
+                <ul class="list-group product-details">
+                    <li class="list-group-item">{{this.dataValues.prodName}}</li>
+                    <li class="list-group-item"><span
+                            class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span> <span
+                            class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span>
+                    </li>
+                    <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
+                    <li class="list-group-item description">{{this.dataValues.description}}</li>
+                    <li class="list-group-item webLink"><a target="_blank"
+                            href="http://{{this.dataValues.webLink}}">View website</a></li>
+                </ul>
             </div>
         </div>
     </div>
+    {{/each}}
+</div>
+</div>
+<div class="d-flex flex-column min-vh-100">
+    <footer class="footer  mt-4 py-3 container-fluid text-white bg-secondary text-center fixed-bottom"
+        id="footerContact">
+        <div class="row">
+            <div class="col-md">
+                <small>Copyright &copy; Advertisement Portal's Website 2020</small>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i>Aman
+                            Kumar</a>
+                        <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i>Felipe
+                            Ferreira</a>
+                        <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                class="fab fa-github"></i>Michael Watt</a>
+                        <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i>Prabh
+                            Singh
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>
+</div>
 </footer>
