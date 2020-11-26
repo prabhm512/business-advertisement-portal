@@ -64,7 +64,8 @@
             <hr>
             {{!-- Render all cards which are active --}}
             {{#each approved}}
-            <div class="col-lg-4">
+            <a href="/product/{{this.dataValues.id}}">
+            <div class="col-lg-4" id="amain">
                     <div class="card mb-2" style="width: 19rem;">
                         <div class="card-header text-white bg-primary"> 
                             <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
@@ -86,6 +87,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
         {{/each}}
     </div>
 </div>
