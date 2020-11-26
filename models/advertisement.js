@@ -47,6 +47,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       imgName: {
         type: DataTypes.STRING
+      },
+      webLink: {
+        type: DataTypes.STRING
       }
     },
     {
