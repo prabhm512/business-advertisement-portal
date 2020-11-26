@@ -21,7 +21,7 @@ $(document).ready(() => {
     $.ajax({
       method: "GET",
       url: "/api/advertisements"
-    }).then(() => {
+    }).then(res => {
       console.log(res);
     });
   };
