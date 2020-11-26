@@ -19,6 +19,10 @@ body {
     float: right; */
     font-size: 20px;
 }
+#myModal {
+    position: absolute;
+    top: 50%;
+  }
 
 #navBar {
     opacity: 85%;
@@ -278,3 +282,5 @@ padding: 20px;
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;       
     }
+
+    
