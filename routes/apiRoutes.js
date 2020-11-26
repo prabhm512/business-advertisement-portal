@@ -68,6 +68,7 @@ module.exports = function(app) {
       prodName: req.body.prodName,
       description: req.body.prodDesc,
       originalPrice: req.body.originalPrice,
+      webLink: req.body.webLink,
       discount: req.body.discount,
       discountedPrice: parseFloat(
         ((100 - req.body.discount) / 100) * req.body.originalPrice

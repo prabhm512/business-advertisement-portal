@@ -44,7 +44,7 @@ module.exports = function(app) {
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));
   });
 
-  app.get("/contactus", (req, res) => {
+  app.get("/contact", (req, res) => {
     res.render("contactus");
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));
   });
