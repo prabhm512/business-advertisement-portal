@@ -14,11 +14,11 @@ body {
 	animation: gradient 15s ease infinite;
     
 }
-a, a:hover {
-    color: black;
+#amain a, #amain a:hover{
+  color: black;
   display: block;
   text-decoration: none;
-}  
+} 
 
 .submit-ad {
     font-size: 20px;
@@ -136,6 +136,7 @@ padding: 20px;
 }
 .mb-8{
     width: 42em; 
+    margin-bottom: 20px ;
 }
 
 .admin-heading {
