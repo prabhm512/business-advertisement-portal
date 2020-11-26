@@ -44,7 +44,7 @@ module.exports = function(app) {
       bussEmail: req.body.bussEmail
     })
       .then(bus => {
-        console.log(bus);
+        // console.log(bus);
         res.json(bus);
       })
       .catch(err => res.json(err));

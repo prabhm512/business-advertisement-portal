@@ -1,5 +1,22 @@
 $(document).ready(() => {
-  /// api get
+  $("#categorySelect").change(function() {
+    getAdsByCategory($(this).val());
+  });
+
+  getAdsByCategory = category => {
+    let categoryString = category || "";
+    if (categoryString) {
+      categoryString = "/category/" + category;
+    }
+    $.ajax({
+      method: "GET",
+      url: categoryString
+    }).then(() => {
+      const url = document.location;
+      document.location = url + "category/" + category;
+    });
+  };
+
   getAds = () => {
     $.ajax({
       method: "GET",
@@ -8,8 +25,6 @@ $(document).ready(() => {
       console.log(res);
     });
   };
-  // get the adds that are currently in the db
-  getAds();
 
   getBusinesses = () => {
     $.ajax({
@@ -40,7 +55,7 @@ $(document).ready(() => {
         bussName: $(".businessName")
           .val()
           .trim(),
-        bussCategory: $(".businessCategory")
+        bussCategory: $("#businessCategory")
           .val()
           .trim(),
         bussEmail: $(".businessEmail")
@@ -53,7 +68,7 @@ $(document).ready(() => {
         .trim()
         .substr(12);
 
-      console.log(relativeImgName);
+      // console.log(relativeImgName);
 
       const advertisement = {
         prodName: $(".prodName")
@@ -97,7 +112,7 @@ $(document).ready(() => {
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds);
+    $.post("/api/advertisements", ad).then(getAds());
   };
 
   // Delete the advertisement if it is rejected
