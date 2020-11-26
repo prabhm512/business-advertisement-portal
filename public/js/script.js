@@ -1,9 +1,9 @@
 $(document).ready(() => {
   $("#categorySelect").change(function() {
-    getAds($(this).val());
+    getAdsByCategory($(this).val());
   });
 
-  getAds = category => {
+  getAdsByCategory = category => {
     let categoryString = category || "";
     if (categoryString) {
       categoryString = "/category/" + category;
@@ -14,6 +14,15 @@ $(document).ready(() => {
     }).then(() => {
       const url = document.location;
       document.location = url + "category/" + category;
+    });
+  };
+
+  getAds = () => {
+    $.ajax({
+      method: "GET",
+      url: "/api/advertisements"
+    }).then(() => {
+      console.log(res);
     });
   };
 
@@ -46,7 +55,7 @@ $(document).ready(() => {
         bussName: $(".businessName")
           .val()
           .trim(),
-        bussCategory: $(".businessCategory")
+        bussCategory: $("#businessCategory")
           .val()
           .trim(),
         bussEmail: $(".businessEmail")
@@ -103,7 +112,7 @@ $(document).ready(() => {
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds);
+    $.post("/api/advertisements", ad).then(getAds());
   };
 
   // Delete the advertisement if it is rejected

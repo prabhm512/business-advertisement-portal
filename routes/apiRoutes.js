@@ -86,8 +86,6 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
-  
-
   // Delete the advertisement from the table
   app.delete("/api/advertisements/:id", (req, res) => {
     db.Bus.destroy({
