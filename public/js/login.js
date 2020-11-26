@@ -27,8 +27,9 @@ $(document).ready(() => {
       password: password
     })
       // eslint-disable-next-line prefer-arrow-callback
+      // eslint-disable-next-line no-unused-vars
       .then(log => {
-        console.log(log);
+        // console.log(log);
         window.location.replace("/admin");
         // If there's an error, log the error
       })
