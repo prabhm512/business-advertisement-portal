@@ -63,10 +63,10 @@ $(document).ready(() => {
           .trim()
       };
       // value of field in C://fakepath/imgName. Just need the imgName part.
-      const relativeImgName = $(".prod-image")
-        .val()
-        .trim()
-        .substr(12);
+      // const relativeImgName = $(".prod-image")
+      //   .val()
+      //   .trim()
+      //   .substr(12);
       //removing the http before saving on db
       let newWebLink = $(".webLink")
         .val()
@@ -92,7 +92,7 @@ $(document).ready(() => {
         bussEmail: $(".businessEmail")
           .val()
           .trim(),
-        imgName: relativeImgName
+        // imgName: relativeImgName
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements

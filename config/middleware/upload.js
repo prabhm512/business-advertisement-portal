@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     cb(null, __basedir + "/public/images/uploads/");
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-bezkoder-${file.originalname}`);
+    cb(null, `${Date.now()}-${file.originalname}`);
   }
 });
 
