@@ -8,7 +8,7 @@
 body {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: large;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #58fbd5, #58fbd5, #31bff2, #38f1c6);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
 	animation: gradient 15s ease infinite;
@@ -48,6 +48,8 @@ padding: 20px;
 	-webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite;
     background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+    color: white;
+    text-align: center;
 }
 #contactJumboTron {
     font-weight: bolder;
@@ -56,6 +58,8 @@ padding: 20px;
 	-webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite;
     background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+    color: white;
+    text-align: center;
 }
 #aboutJumboTron {
     font-weight: bolder;
@@ -64,6 +68,8 @@ padding: 20px;
 	-webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite;
     background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+    color: white;
+    text-align: center;
 }
 #mainImage {
     display: flex;
@@ -85,6 +91,7 @@ padding: 20px;
     font-size: 23px;
     color: white;
 }
+
 #secondTitleMain { 
     background-color: grey;
     font-size: 20px;
