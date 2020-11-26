@@ -15,8 +15,6 @@ body {
     
 }
 .submit-ad {
-    /* margin-top: 10px;
-    float: right; */
     font-size: 20px;
 }
 
@@ -41,7 +39,7 @@ padding: 20px;
 #jumboTronIndex {
     padding-top: 60px;
 }
-#jumboTronAdvertise {
+#jumboTronAdvertise, #contactJumboTron, #aboutJumboTron {
     font-weight: bolder;
     /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
 	background-size: 400% 400%;
@@ -51,26 +49,7 @@ padding: 20px;
     color: white;
     text-align: center;
 }
-#contactJumboTron {
-    font-weight: bolder;
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-	background-size: 400% 400%;
-	-webkit-animation: gradient 15s ease infinite;
-    animation: gradient 15s ease infinite;
-    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
-    color: white;
-    text-align: center;
-}
-#aboutJumboTron {
-    font-weight: bolder;
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-	background-size: 400% 400%;
-	-webkit-animation: gradient 15s ease infinite;
-    animation: gradient 15s ease infinite;
-    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
-    color: white;
-    text-align: center;
-}
+
 #mainImage {
     display: flex;
     margin-left: auto;
@@ -79,14 +58,8 @@ padding: 20px;
     border-radius: 20px;
     
 }
-/* #contactJumboTron {
-    background-size: 400% 400%;
-	-webkit-animation: gradient 15s ease infinite;
-	animation: gradient 15s ease infinite;
-    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
-} */
 
-.lead{
+.lead {
     text-align: center;
     font-size: 23px;
     color: white;
@@ -233,6 +206,10 @@ padding: 20px;
 }
 #cardholder {
     padding-top: 20px;
+}
+#aboutUs, #aboutUsTwo {
+    font-weight: bolder;
+    color: #494949;
 }
 
 
