@@ -43,10 +43,27 @@ padding: 20px;
 }
 #jumboTronAdvertise {
     font-weight: bolder;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
-	animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+}
+#contactJumboTron {
+    font-weight: bolder;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+}
+#aboutJumboTron {
+    font-weight: bolder;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
 }
 #mainImage {
     display: flex;
@@ -56,6 +73,13 @@ padding: 20px;
     border-radius: 20px;
     
 }
+/* #contactJumboTron {
+    background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+	animation: gradient 15s ease infinite;
+    background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+} */
+
 .lead{
     text-align: center;
     font-size: 23px;
@@ -90,6 +114,16 @@ padding: 20px;
     padding-top: 70px;
     font-weight: bolder;
     font-size: 40px;
+    color: white;
+}
+#display-4-header {
+    padding-top: 10px;
+    font-weight: bolder;
+    font-size: 40px;
+    color: white;
+}
+#detailsPara{
+    padding-top: 10px;
     color: white;
 }
 #containerAdvertise {
