@@ -278,3 +278,52 @@ padding: 20px;
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;       
     }
+
+
+
+
+    .card-container {
+        display: grid;
+        perspective: 700px;
+        
+    }
+    
+    .card-flip, .card-container {
+        transform-style: preserve-3d;
+        transition: all 0.7s ease;
+        margin-bottom: 2%;
+    }
+    
+    .card-flip {
+        width: 75%;
+    }
+    
+    .card-flip div {
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+    
+    .back {
+        transform: rotateY(-180deg);
+    }
+    
+    .card-flip:hover {
+        transform: rotateY(180deg);
+    }
+    .card-flip {
+        display: grid;
+        grid-template-areas: "frontAndBack";
+        transform-style: preserve-3d;
+        transition: all 0.7s ease;
+    }
+    
+    .front {
+        grid-area: frontAndBack;
+    }
+    
+    .back {
+        grid-area: frontAndBack;
+        transform: rotateY(-180deg);
+    }
+
+
