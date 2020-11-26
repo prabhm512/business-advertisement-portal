@@ -1,5 +1,22 @@
 $(document).ready(() => {
-  /// api get
+  $("#categorySelect").change(function() {
+    getAdsByCategory($(this).val());
+  });
+
+  getAdsByCategory = category => {
+    let categoryString = category || "";
+    if (categoryString) {
+      categoryString = "/category/" + category;
+    }
+    $.ajax({
+      method: "GET",
+      url: categoryString
+    }).then(() => {
+      const url = document.location;
+      document.location = url + "category/" + category;
+    });
+  };
+
   getAds = () => {
     $.ajax({
       method: "GET",
@@ -8,8 +25,6 @@ $(document).ready(() => {
       console.log(res);
     });
   };
-  // get the adds that are currently in the db
-  getAds();
 
   getBusinesses = () => {
     $.ajax({
@@ -40,13 +55,21 @@ $(document).ready(() => {
         bussName: $(".businessName")
           .val()
           .trim(),
-        bussCategory: $(".businessCategory")
+        bussCategory: $("#businessCategory")
           .val()
           .trim(),
         bussEmail: $(".businessEmail")
           .val()
           .trim()
       };
+      // value of field in C://fakepath/imgName. Just need the imgName part.
+      const relativeImgName = $(".prod-image")
+        .val()
+        .trim()
+        .substr(12);
+
+      // console.log(relativeImgName);
+
       const advertisement = {
         prodName: $(".prodName")
           .val()
@@ -60,10 +83,11 @@ $(document).ready(() => {
         discount: $(".discount")
           .val()
           .trim(),
-        prodImg: $(".prod-image").val(),
+        // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim()
+          .trim(),
+        imgName: relativeImgName
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
@@ -79,6 +103,7 @@ $(document).ready(() => {
         $(".prodDesc").val("");
         $(".originalPrice").val("");
         $(".discount").val("");
+        $(".prod-image").val("");
       });
     } else {
       // Changes background colour of email input box to red on entry of an incorrect email
@@ -87,7 +112,7 @@ $(document).ready(() => {
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds);
+    $.post("/api/advertisements", ad).then(getAds());
   };
 
   // Delete the advertisement if it is rejected
@@ -151,6 +176,24 @@ $(document).ready(() => {
       data: newState
     }).then(() => location.reload());
   });
+
+  // const imagesPreview = function(input, placeToInsertImagePreview) {
+  //   if (input.files) {
+  //     const filesAmount = input.files.length;
+  //     for (i = 0; i < filesAmount; i++) {
+  //       const reader = new FileReader();
+  //       reader.onload = function(event) {
+  //         $($.parseHTML("<img>"))
+  //           .attr("src", event.target.result)
+  //           .appendTo(placeToInsertImagePreview);
+  //       };
+  //       reader.readAsDataURL(input.files[i]);
+  //     }
+  //   }
+  // };
+  // $("#input-files").on("change", function() {
+  //   imagesPreview(this, "div.preview-images");
+  // });
 });
 
 (function() {
