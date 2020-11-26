@@ -67,7 +67,11 @@ $(document).ready(() => {
         .val()
         .trim()
         .substr(12);
-
+      //removing the http before saving on db
+      let newWebLink = $(".webLink")
+        .val()
+        .trim();
+      newWebLink = newWebLink.replace("https://", "");
       // console.log(relativeImgName);
 
       const advertisement = {
@@ -77,6 +81,7 @@ $(document).ready(() => {
         prodDesc: $(".prodDesc")
           .val()
           .trim(),
+        webLink: newWebLink,
         originalPrice: $(".originalPrice")
           .val()
           .trim(),
@@ -101,6 +106,7 @@ $(document).ready(() => {
         $(".businessEmail").val("");
         $(".prodName").val("");
         $(".prodDesc").val("");
+        $(".webLink").val("");
         $(".originalPrice").val("");
         $(".discount").val("");
         $(".prod-image").val("");
