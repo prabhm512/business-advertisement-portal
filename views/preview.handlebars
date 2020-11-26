@@ -1,5 +1,4 @@
-{{#each ads}}
-    <div class="row">
+    {{!-- <div class="row">
         <div class="row-xs-12 row-sm-12 row-md-6 ">
             <div class="card  m-3 mx-auto" style="width: 19rem;">
             <div class="card-header text-white bg-primary">
@@ -7,7 +6,7 @@
                 <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
             </div>
             <div class="card-body bg-light text-dark">
-                <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder"
+                <img class="card-img-top" src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder"
                     sizes="(min-width: 256px) 114px, 350px" srcset="" width="262" height="204">
                 <ul class="list-group product-details">
                     <li class="list-group-item">{{this.dataValues.prodName}}</li>
@@ -21,5 +20,25 @@
             </div>
         </div>
         </div>
+    </div> 
+    --}}
+{{#each ads}}
+     <div class="card mb-8">
+        <div class="card-header text-white bg-primary">
+                    <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
+                    <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
+                </div>
+    <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder" class="card-img-top">
+    <div class="card-body">
+        <ul class="list-group product-details">
+            <li class="list-group-item">{{this.dataValues.prodName}}</li>
+            <li class="list-group-item"><span class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span>   <span class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span></li>
+            <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
+            <li class="list-group-item description">{{this.dataValues.description}}</li>
+            <li class="list-group-item webLink"><a target="_blank" href="http://{{this.dataValues.webLink}}">View website</a></li>
+            {{!-- <li class="list-group-item" style="font-size: 15px;"></li> --}}
+            {{!-- </li> --}}
+        </ul>
+    </div>
     </div>
 {{/each}}
