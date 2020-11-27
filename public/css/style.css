@@ -280,3 +280,11 @@ padding: 20px;
     }
 
 }
+
+.cardarea:hover {
+    position: relative;
+    margin-left: 20%;
+    -webkit-box-shadow: -6px 6px 15px 5px #000000; 
+box-shadow: -6px 6px 15px 5px #000000;
+
+}
