@@ -213,9 +213,9 @@ padding: 20px;
     border-radius: 20px;
 }
 #categorySelect {
-    width: 50%;
-    
+ width: 80%;
 }
+
 #cardholder {
     padding-top: 20px;
 }
@@ -278,5 +278,13 @@ padding: 20px;
     .mb-8{
         width: 14em; 
     }
+
+}
+
+.cardarea:hover {
+    position: relative;
+    margin-left: 20%;
+    -webkit-box-shadow: -6px 6px 15px 5px #000000; 
+box-shadow: -6px 6px 15px 5px #000000;
 
 }
