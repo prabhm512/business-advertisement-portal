@@ -74,8 +74,13 @@ padding: 20px;
 
 .lead {
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
     color: white;
+}
+#indexH3  {
+    font-size: 20px;
+    color: white;
+    
 }
 
 #secondTitleMain { 
@@ -97,14 +102,13 @@ padding: 20px;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         color: #494949 !important;
-        text-transform: uppercase;
+        font-size: 18px;
         text-decoration: none;
         background: #ffffff;
         display: inline-block;
         transition: all 0.4s ease 0s;
 }
 .display-4 {
-    padding-top: 5px;
     font-weight: bolder;
     font-size: 40px;
     padding-bottom: 1px;
@@ -131,6 +135,8 @@ padding: 20px;
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bolder;
+    color: white;
+    font-size: 22px;
 }
 .invalid-feedback {
     font-size: 13px;
@@ -216,7 +222,7 @@ padding: 20px;
    border-radius: 20px;
 }
 #business-img{
-    border-radius: 1px;
+    border-radius: 0.1px;
 }
 #categorySelect {
  width: 80%;
@@ -226,8 +232,8 @@ padding: 20px;
     padding-top: 20px;
 }
 #aboutUs, #aboutUsTwo {
-    font-weight: bold;
-    font-size: 25px;
+    font-weight: bolder;
+    font-size: 18px;
     color: #0b0b0bae;
 }
 
