@@ -61,6 +61,21 @@ module.exports = function(app) {
       }
     }).then(result => {
       businessID = result.dataValues.id;
+      // console.log(upload.storage.filename.uniqueFileName);
+    });
+
+    // Get the name of the last image in the table
+    const imgID = await db.Image.max("id");
+    // Store the name of the image with the returned ID
+    let nameLastImg;
+
+    await db.Image.findOne({
+      attributes: ["name"],
+      where: {
+        id: imgID
+      }
+    }).then(result => {
+      nameLastImg = result.dataValues.name;
     });
 
     // Create a record in the advertisements table
@@ -76,7 +91,7 @@ module.exports = function(app) {
       // prodImg: req.body.prodImg,
       active: false,
       archive: false,
-      imgName: req.body.imgName,
+      imgName: nameLastImg,
       BusinessId: businessID
     })
       .then(ads => {

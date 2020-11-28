@@ -15,7 +15,7 @@ const uploadFiles = async (req, res) => {
 
     db.Image.create({
       type: req.file.mimetype,
-      name: req.file.originalname,
+      name: req.file.filename,
       data: fs.readFileSync(
         __basedir + "/public/images/uploads/" + req.file.filename
       )
@@ -28,11 +28,11 @@ const uploadFiles = async (req, res) => {
 
         // return res.send("File has been uploaded.");
       })
-
       .then(() => {
-        // Remove the image file from the uploads folder as too many images will cause the app to increase in size
+        // Remove the image file from the tmp folder as too many images will cause the app to increase in size
+        // Images in tmp folder are not being used
         fs.unlinkSync(
-          __basedir + "/public/images/uploads/" + req.file.filename
+          __basedir + "/public/images/tmp/" + req.file.originalname
         );
       });
   } catch (error) {
