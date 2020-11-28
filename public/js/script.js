@@ -91,7 +91,7 @@ $(document).ready(() => {
         // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim(),
+          .trim()
         // imgName: relativeImgName
         // active: false
       };
