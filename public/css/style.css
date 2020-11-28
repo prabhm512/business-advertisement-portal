@@ -24,14 +24,18 @@ body {
 .submit-ad {
     font-size: 20px;
 }
+#myModal {
+    position: absolute;
+    top: 50%;
+  }
 
 #navBar {
     opacity: 85%;
 }
 
-.mb-3{
+/* .mb-3{
     width: 500px;
-}
+} */
 #articleAdvertise{
 padding: 20px;
 }
@@ -271,7 +275,6 @@ padding: 20px;
     box-sizing: border-box;       
     }
 
-
 @media screen and (max-width: 768px){
     .mb-8{
         width: 21em; 
@@ -291,3 +294,4 @@ padding: 20px;
     box-shadow: -6px 6px 15px 5px #000000;
 
 }
+
