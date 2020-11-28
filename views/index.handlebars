@@ -79,11 +79,12 @@
                                 class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span> <span
                                 class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span>
                         </li>
-                        <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
-                        <li class="list-group-item description"><textarea>{{this.dataValues.description}}</textarea></li>
+                        {{!-- <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li> --}}
+                        <textarea class="controlDescHeight list-group-item">{{this.dataValues.description}}</textarea>
                         <li class="list-group-item webLink"><a target="_blank"
                                 href="http://{{this.dataValues.webLink}}">View website</a></li>
                     </ul>
+                    {{!-- <li class="list-group-item description"></li> --}}
                 </div>
             </div>
         </div>
