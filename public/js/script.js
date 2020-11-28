@@ -40,7 +40,10 @@ $(document).ready(() => {
   getBusinesses();
 
   // When the submit button is clicked, store all entered values in an object
-  $(".submit-ad").on("click", () => {
+  // eslint-disable-next-line no-unused-vars
+  $(".submit-ad").on("click", event => {
+    // event.preventDefault();
+    // $.post("/api/images")
     // check if email address is valid and that it is not left null
     if (
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -122,7 +125,7 @@ $(document).ready(() => {
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
       // postBusiness(business);
-      $.post("/api/businesses", business).then(() => {
+      $.post("/api/businesses", business, () => {
         getBusinesses();
 
         postAd(advertisement);
@@ -154,7 +157,7 @@ $(document).ready(() => {
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds);
+    $.post("/api/advertisements", ad, () => getAds);
   };
 
   // Delete the advertisement if it is rejected

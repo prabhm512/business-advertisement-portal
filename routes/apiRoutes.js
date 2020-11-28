@@ -72,7 +72,8 @@ module.exports = function(app) {
       .catch(err => res.json(err));
 
     // Get the name of the last image in the table
-    const imgID = await db.Image.max("id");
+    // /api/advertisements route is hit before image is actually added in the table that is why +1 needs to be added
+    const imgID = parseInt(await db.Image.max("id"));
     // Store the name of the image with the returned ID
     let nameLastImg;
 
@@ -88,27 +89,29 @@ module.exports = function(app) {
       .catch(err => res.json(err));
 
     // Create a record in the advertisements table
-    db.Advertisement.create({
-      prodName: req.body.prodName,
-      description: req.body.prodDesc,
-      originalPrice: req.body.originalPrice,
-      webLink: req.body.webLink,
-      discount: req.body.discount,
-      discountedPrice: parseFloat(
-        ((100 - req.body.discount) / 100) * req.body.originalPrice
-      ),
-      // prodImg: req.body.prodImg,
-      active: false,
-      archive: false,
-      imgName: nameLastImg,
-      BusinessId: businessID
-    })
-      .then(ads => {
-        // console.log(discountedPrice);
-        // console.log(ads);
-        return res.json(ads);
+    setTimeout(() => {
+      db.Advertisement.create({
+        prodName: req.body.prodName,
+        description: req.body.prodDesc,
+        originalPrice: req.body.originalPrice,
+        webLink: req.body.webLink,
+        discount: req.body.discount,
+        discountedPrice: parseFloat(
+          ((100 - req.body.discount) / 100) * req.body.originalPrice
+        ),
+        // prodImg: req.body.prodImg,
+        active: false,
+        archive: false,
+        imgName: nameLastImg,
+        BusinessId: businessID
       })
-      .catch(err => res.json(err));
+        .then(ads => {
+          // console.log(discountedPrice);
+          // console.log(ads);
+          return res.json(ads);
+        })
+        .catch(err => res.json(err));
+    }, 1000);
   });
 
   // Delete the advertisement from the table
