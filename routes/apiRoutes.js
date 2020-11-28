@@ -71,25 +71,24 @@ module.exports = function(app) {
       })
       .catch(err => res.json(err));
 
-    // Get the name of the last image in the table
-    // /api/advertisements route is hit before image is actually added in the table that is why +1 needs to be added
-    const imgID = parseInt(await db.Image.max("id"));
-    // Store the name of the image with the returned ID
-    let nameLastImg;
-
-    await db.Image.findOne({
-      attributes: ["name"],
-      where: {
-        id: imgID
-      }
-    })
-      .then(result => {
-        nameLastImg = result.dataValues.name;
-      })
-      .catch(err => res.json(err));
-
     // Create a record in the advertisements table
-    setTimeout(() => {
+    setTimeout(async () => {
+      // Get the name of the last image in the table
+      const imgID = parseInt(await db.Image.max("id"));
+      // Store the name of the image with the returned ID
+      let nameLastImg;
+
+      await db.Image.findOne({
+        attributes: ["name"],
+        where: {
+          id: imgID
+        }
+      })
+        .then(result => {
+          nameLastImg = result.dataValues.name;
+        })
+        .catch(err => res.json(err));
+
       db.Advertisement.create({
         prodName: req.body.prodName,
         description: req.body.prodDesc,

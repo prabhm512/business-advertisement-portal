@@ -157,7 +157,11 @@ $(document).ready(() => {
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad, () => getAds);
+    $.post("/api/advertisements", ad, () => {
+      getAds();
+      // Thank you modal call
+      $("#myModal").modal();
+    });
   };
 
   // Delete the advertisement if it is rejected
