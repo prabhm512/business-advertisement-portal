@@ -1,4 +1,6 @@
 const db = require("../models");
+const uploadController = require("../controllers/upload");
+const upload = require("../config/middleware/upload");
 
 // eslint-disable-next-line prefer-const
 let passport = require("../config/passport");
@@ -50,6 +52,9 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
+  // Post route for image upload
+  app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
+
   //post the add
   app.post("/api/advertisements", async (req, res) => {
     let businessID;
@@ -59,10 +64,12 @@ module.exports = function(app) {
       where: {
         bussEmail: req.body.bussEmail
       }
-    }).then(result => {
-      businessID = result.dataValues.id;
-      // console.log(upload.storage.filename.uniqueFileName);
-    });
+    })
+      .then(result => {
+        businessID = result.dataValues.id;
+        // console.log(upload.storage.filename.uniqueFileName);
+      })
+      .catch(err => res.json(err));
 
     // Get the name of the last image in the table
     const imgID = await db.Image.max("id");
@@ -74,9 +81,11 @@ module.exports = function(app) {
       where: {
         id: imgID
       }
-    }).then(result => {
-      nameLastImg = result.dataValues.name;
-    });
+    })
+      .then(result => {
+        nameLastImg = result.dataValues.name;
+      })
+      .catch(err => res.json(err));
 
     // Create a record in the advertisements table
     db.Advertisement.create({
@@ -97,7 +106,7 @@ module.exports = function(app) {
       .then(ads => {
         // console.log(discountedPrice);
         // console.log(ads);
-        res.json(ads);
+        return res.json(ads);
       })
       .catch(err => res.json(err));
   });

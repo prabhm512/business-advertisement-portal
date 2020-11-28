@@ -1,8 +1,6 @@
 // const path = require("path");
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/auth");
-const uploadController = require("../controllers/upload");
-const upload = require("../config/middleware/upload");
 
 // html routes
 module.exports = function(app) {
@@ -97,7 +95,4 @@ module.exports = function(app) {
   });
 
   // app.get("/advertise", homeController.getHome);
-
-  // Post route for image upload
-  app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
 };

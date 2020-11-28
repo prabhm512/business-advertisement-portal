@@ -26,6 +26,8 @@ $(document).ready(() => {
     });
   };
 
+  getAds();
+
   getBusinesses = () => {
     $.ajax({
       method: "GET",
@@ -38,19 +40,42 @@ $(document).ready(() => {
   getBusinesses();
 
   // When the submit button is clicked, store all entered values in an object
-  $(".submit-ad").on("click", event => {
-    event.preventDefault;
+  $(".submit-ad").on("click", () => {
     // check if email address is valid and that it is not left null
     if (
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         $(".businessEmail")
           .val()
           .trim()
-      )
+      ) &&
+      $(".businessName")
+        .val()
+        .trim() !== "" &&
+      $("#businessCategory")
+        .val()
+        .trim() &&
+      $(".prodName")
+        .val()
+        .trim() !== "" &&
+      $(".prodDesc")
+        .val()
+        .trim() !== "" &&
+      $(".webLink")
+        .val()
+        .trim() &&
+      $(".originalPrice")
+        .val()
+        .trim() !== "" &&
+      $(".discount")
+        .val()
+        .trim() !== "" &&
+      $(".prod-image")
+        .val()
+        .trim() !== ""
     ) {
       // Changes background colour of email input box back to white.
       // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
-      $(".businessEmail").css("background-color", "white");
+      $(".prod-image").css("background-color", "white");
       const business = {
         bussName: $(".businessName")
           .val()
@@ -99,7 +124,9 @@ $(document).ready(() => {
       // postBusiness(business);
       $.post("/api/businesses", business).then(() => {
         getBusinesses();
+
         postAd(advertisement);
+
         // Empty input after post has been made
         $(".businessName").val("");
         $(".businessCategory").val("");
@@ -110,16 +137,24 @@ $(document).ready(() => {
         $(".originalPrice").val("");
         $(".discount").val("");
         $(".prod-image").val("");
+
+        // Thank you modal call
+        $("#myModal").modal();
       });
-      $("#myModal").modal();
-    } else {
-      // Changes background colour of email input box to red on entry of an incorrect email
-      $(".businessEmail").css("background-color", "#ffcccb");
+    }
+
+    if (
+      $(".prod-image")
+        .val()
+        .trim() === ""
+    ) {
+      // Changes border colour of image selection box to red if empty
+      $(".prod-image").css("background-color", "red");
     }
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds());
+    $.post("/api/advertisements", ad).then(getAds);
   };
 
   // Delete the advertisement if it is rejected

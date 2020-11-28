@@ -31,9 +31,7 @@ const uploadFiles = async (req, res) => {
       .then(() => {
         // Remove the image file from the tmp folder as too many images will cause the app to increase in size
         // Images in tmp folder are not being used
-        fs.unlinkSync(
-          __basedir + "/public/images/tmp/" + req.file.originalname
-        );
+        fs.unlinkSync(__basedir + "/public/images/tmp/" + req.file.filename);
       });
   } catch (error) {
     console.log(error);
