@@ -111,6 +111,7 @@ $(document).ready(() => {
         $(".discount").val("");
         $(".prod-image").val("");
       });
+      $("#myModal").modal();
     } else {
       // Changes background colour of email input box to red on entry of an incorrect email
       $(".businessEmail").css("background-color", "#ffcccb");

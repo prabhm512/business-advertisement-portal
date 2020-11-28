@@ -33,8 +33,8 @@
                 </div>
             </header>
 
-            <form id="articleAdvertise"class="needs-validation" novalidate>
-                <div class="container">
+        <form id="articleAdvertise"class="needs-validation" novalidate>
+            <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
@@ -126,9 +126,26 @@
                             {{!-- <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label> --}}
                         </div>
                         {{!-- Do not change the type of this button. It must be "submit" --}}
-                        <button class="btn btn-outline-primary submit-ad" type="submit" data-toggle="tooltip" id="submit-button"
+                        <button class="btn btn-outline-primary submit-ad" data-toggle="modal" type="submit"  id="submit-button"
                         data-placement="bottom"
                         title="Submit Advertisement!">Submit</button>
+                        <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                         <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Thanks you!</h4>
+                                <button type="button" class="close" data-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                <p>Our team will review the information and the product will soon be displayed on the main page</p>
+                                </div>
+                                <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
