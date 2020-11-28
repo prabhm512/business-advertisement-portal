@@ -11,7 +11,8 @@ body {
     background: linear-gradient(-45deg, #58fbd5, #58fbd5, #31bff2, #38f1c6);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
-	animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    font-size: 16px;
     
 }
 #amain a, #amain a:hover{
@@ -84,7 +85,7 @@ padding: 20px;
 /* secondTitle  */
 #footerContact {
     bottom: 0;
-    background-color: rgb(98, 98, 98);
+    background-color: rgba(140, 139, 139, 0.572);
     height: 80px;
     bottom: 0;
     left: 0;
@@ -103,13 +104,14 @@ padding: 20px;
         transition: all 0.4s ease 0s;
 }
 .display-4 {
-    padding-top: 70px;
+    padding-top: 5px;
     font-weight: bolder;
     font-size: 40px;
+    padding-bottom: 1px;
     color: white;
 }
 #display-4-header {
-    padding-top: 10px;
+    padding-top: 1px;
     font-weight: bolder;
     font-size: 40px;
     color: white;
@@ -201,7 +203,7 @@ padding: 20px;
 }
 
 .github-link:hover {
-  color: rgb(53, 111, 246);
+  color: rgb(214, 246, 53);
 }
 #submit-button:hover {
   cursor: pointer;
@@ -214,7 +216,7 @@ padding: 20px;
    border-radius: 20px;
 }
 #business-img{
-    border-radius: 20px;
+    border-radius: 1px;
 }
 #categorySelect {
  width: 80%;
@@ -224,8 +226,9 @@ padding: 20px;
     padding-top: 20px;
 }
 #aboutUs, #aboutUsTwo {
-    font-weight: bolder;
-    color: #494949;
+    font-weight: bold;
+    font-size: 25px;
+    color: #0b0b0bae;
 }
 
 
@@ -288,7 +291,7 @@ padding: 20px;
     position: relative;
     margin-left: 20%;
     -webkit-box-shadow: -6px 6px 15px 5px #000000; 
-box-shadow: -6px 6px 15px 5px #000000;
+    box-shadow: -6px 6px 15px 5px #000000;
 
 }
 
