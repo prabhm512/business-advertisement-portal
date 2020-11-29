@@ -310,3 +310,7 @@ padding: 20px;
     background-color: rgb(60, 190, 234);
 }
 
+.aboutustitle {
+    text-shadow: -6px 2px 5px rgba(0,0,0,0.53);
+}
+
