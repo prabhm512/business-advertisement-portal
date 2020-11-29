@@ -1,18 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    
 }
 
 body {
     font-family: 'Alegreya Sans', sans-serif;
-    font-size: large;
     background: linear-gradient(-45deg, #58fbd5, #58fbd5, #31bff2, #38f1c6);
 	/* background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite; */
     font-size: 16px;
+    box-sizing: border-box;
 }
 #amain a, #amain a:hover{
   color: black;
@@ -65,10 +64,17 @@ padding: 20px;
     text-align: center;
     font-size: 20px;
     color: white;
+    letter-spacing:normal;
+    line-height: normal;
+
 }
 #indexH3  {
     font-size: 23px;
     color: white;
+    letter-spacing:normal;
+    line-height: normal;
+    line-height: 30px;
+    
 }
 
 #secondTitleMain { 
@@ -83,6 +89,8 @@ padding: 20px;
     bottom: 0;
     left: 0;
     right: 0;
+    letter-spacing: normal;
+    line-height: normal;
 }
 #submit-button {
         padding: 7px;
@@ -101,6 +109,8 @@ padding: 20px;
     font-size: 40px;
     color: white;
     text-shadow: -4px 2px 4px rgba(0,0,0,0.53);
+    letter-spacing: normal;
+    line-height: normal;
 }
 #display-4-header {
     font-weight: bolder;
@@ -219,6 +229,7 @@ padding: 20px;
 }
 #categorySelect {
  width: 80%;
+
 }
 
 #cardholder {
@@ -227,7 +238,7 @@ padding: 20px;
 #aboutUs, #aboutUsTwo {
     font-weight: bolder;
     font-size: 18px;
-    color: #0b0b0bae;
+    color: white;
 }
 
 .controlDescHeight {
