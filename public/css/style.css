@@ -50,7 +50,7 @@ padding: 20px;
     
 }
 #jumboTronIndex {
-    padding-top: 60px;
+    padding-top: 10px;
 }
 #jumboTronAdvertise, #contactJumboTron, #aboutJumboTron {
     font-weight: bolder;
@@ -78,7 +78,7 @@ padding: 20px;
     color: white;
 }
 #indexH3  {
-    font-size: 20px;
+    font-size: 23px;
     color: white;
     
 }
@@ -111,11 +111,9 @@ padding: 20px;
 .display-4 {
     font-weight: bolder;
     font-size: 40px;
-    padding-bottom: 1px;
     color: white;
 }
 #display-4-header {
-    padding-top: 1px;
     font-weight: bolder;
     font-size: 40px;
     color: white;
@@ -134,6 +132,12 @@ padding: 20px;
     display: inline;
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: bolder;
+    color: white;
+    font-size: 22px;
+}
+#headerTwoProduct {
+    padding-top: 20px;
     font-weight: bolder;
     color: white;
     font-size: 22px;
@@ -268,7 +272,6 @@ padding: 20px;
     .header {
         color: #36A0FF;
         font-size: 27px;
-        padding: 10px;
     }
 
     .bigicon {
@@ -301,5 +304,9 @@ padding: 20px;
     -webkit-box-shadow: -6px 6px 15px 5px #000000; 
     box-shadow: -6px 6px 15px 5px #000000;
 
+}
+
+.card-header {
+    background-color: rgb(60, 190, 234);
 }
 
