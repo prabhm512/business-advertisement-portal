@@ -11,7 +11,8 @@ body {
     background: linear-gradient(-45deg, #58fbd5, #58fbd5, #31bff2, #38f1c6);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
-	animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    font-size: 16px;
     
 }
 #amain a, #amain a:hover{
@@ -23,14 +24,18 @@ body {
 .submit-ad {
     font-size: 20px;
 }
+#myModal {
+    position: absolute;
+    top: 50%;
+  }
 
 #navBar {
     opacity: 85%;
 }
 
-.mb-3{
+/* .mb-3{
     width: 500px;
-}
+} */
 #articleAdvertise{
 padding: 20px;
 }
@@ -69,8 +74,13 @@ padding: 20px;
 
 .lead {
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
     color: white;
+}
+#indexH3  {
+    font-size: 20px;
+    color: white;
+    
 }
 
 #secondTitleMain { 
@@ -80,7 +90,7 @@ padding: 20px;
 /* secondTitle  */
 #footerContact {
     bottom: 0;
-    background-color: rgb(98, 98, 98);
+    background-color: rgba(140, 139, 139, 0.572);
     height: 80px;
     bottom: 0;
     left: 0;
@@ -92,20 +102,20 @@ padding: 20px;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         color: #494949 !important;
-        text-transform: uppercase;
+        font-size: 18px;
         text-decoration: none;
         background: #ffffff;
         display: inline-block;
         transition: all 0.4s ease 0s;
 }
 .display-4 {
-    padding-top: 70px;
     font-weight: bolder;
     font-size: 40px;
+    padding-bottom: 1px;
     color: white;
 }
 #display-4-header {
-    padding-top: 10px;
+    padding-top: 1px;
     font-weight: bolder;
     font-size: 40px;
     color: white;
@@ -125,6 +135,8 @@ padding: 20px;
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bolder;
+    color: white;
+    font-size: 22px;
 }
 .invalid-feedback {
     font-size: 13px;
@@ -197,7 +209,7 @@ padding: 20px;
 }
 
 .github-link:hover {
-  color: rgb(53, 111, 246);
+  color: rgb(214, 246, 53);
 }
 #submit-button:hover {
   cursor: pointer;
@@ -210,7 +222,7 @@ padding: 20px;
    border-radius: 20px;
 }
 #business-img{
-    border-radius: 20px;
+    border-radius: 0.1px;
 }
 #categorySelect {
  width: 80%;
@@ -221,10 +233,13 @@ padding: 20px;
 }
 #aboutUs, #aboutUsTwo {
     font-weight: bolder;
-    color: #494949;
+    font-size: 18px;
+    color: #0b0b0bae;
 }
 
-
+.controlDescHeight {
+    text-align: center;
+}
 
 @-webkit-keyframes gradient {
 	0% {
@@ -268,7 +283,6 @@ padding: 20px;
     box-sizing: border-box;       
     }
 
-
 @media screen and (max-width: 768px){
     .mb-8{
         width: 21em; 
@@ -285,6 +299,7 @@ padding: 20px;
     position: relative;
     margin-left: 20%;
     -webkit-box-shadow: -6px 6px 15px 5px #000000; 
-box-shadow: -6px 6px 15px 5px #000000;
+    box-shadow: -6px 6px 15px 5px #000000;
 
 }
+

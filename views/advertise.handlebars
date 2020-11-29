@@ -27,29 +27,28 @@
             <header>
                 <div id="jumboTronAdvertise" class="jumbotron jumbotron-fluid" >
                     <div class="container">
+                        <img src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
+                        alt="Example testing img" class="img-position" id="business-img" />
                         <h1 class="display-4">Business Advertisement Portal</h1>
-                        <p class="lead">Please enter your advertisement details!</p>
+                        <p class="lead"><i>Please enter your advertisement details!</i></p>
                 </div>
                 </div>
             </header>
 
-            <form id="articleAdvertise"class="needs-validation" novalidate>
-                <div class="container">
+        <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
+            <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
-                    <form class="was-validated">
+                    {{!-- <form class="was-validated"> --}}
                         <div class="mb-3">
                         {{!-- <label for="validationTextarea">Business Name: </label> --}}
                         
-                        <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea" data-toggle="tooltip" data-placement="left" title="Please enter a valid business name"  required></input>
-                        <div class="was-validated">
-                            
-                        </div>
+                        <input type="text" placeholder="Business Name" class="form-control businessName " id="validationTextarea" data-toggle="tooltip" data-placement="left" title="Please enter a valid business name" required>
                         </div>
                         <div class="mb-3">
                         <div class="input-group is-invalid">
-                            <select class="browser-default custom-select" id="businessCategory">
+                            <select class="browser-default custom-select" id="businessCategory" required>
                                 <option selected value="">Choose a Category:</option>
                                     <option value="Technology">Technology</option>
                                     <option value="Food">Food</option>
@@ -83,18 +82,18 @@
                         <div class="mb-3">
                         
                         {{!-- <label for="validationTextarea">Product Name: </label> --}}
-                        <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product of your business"  ></input>
+                        <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product of your business" required>
                         
                         </div>
                         <div class="mb-3">
                         {{!-- <label for="validationTextarea">Product  Description:: </label> --}}
-                        <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" ></input>
+                        <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" required>
                         {{!-- <div class="invalid-feedback">
                             Please enter a valid Product name.
                         </div> --}}
                         </div>
                         <div class="mb-3">
-                        <input class="form-control webLink" id="validationTextarea" placeholder="Web link of the product" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" ></input>
+                        <input class="form-control webLink" id="validationTextarea" placeholder="Web link of the product" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" required>
                         </div>
                       
                         <div class="mb-3">
@@ -102,7 +101,7 @@
                             <div class="input-group-prepend">
                             <label class="input-group-text" for="validatedInputGroupSelect"> $</label>
                             </div>
-                            <input class="form-control originalPrice" type="text" placeholder="Original Price">
+                            <input class="form-control originalPrice" type="text" placeholder="Original Price" required>
             
                         </div>
                         
@@ -112,46 +111,59 @@
                             <div class="input-group-prepend">
                             <label class="input-group-text" for="validatedInputGroupSelect">%</label>
                             </div>
-                            <input class="form-control discount" type="text" placeholder="Percentage Discount Offered">
+                            <input class="form-control discount" type="text" placeholder="Percentage Discount Offered" required>
                         </div>
                         </div>
-                    </form>
-                    {{!-- New Form needs to be created for image upload. It cannot be inside old form. --}}
-                    <form class="mt-4"
-                        action="/api/images"
-                        method="POST"
-                        enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="file" name="file" class="form-control-file border prod-image" id="input-files validatedInputGroupCustomFile" required>
                             {{!-- <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label> --}}
                         </div>
-                        {{!-- Do not change the type of this button. It must be "submit" --}}
-                        <button class="btn btn-outline-primary submit-ad" type="submit" data-toggle="tooltip" id="submit-button"
+                    
+                        <button class="btn btn-outline-primary submit-ad" data-toggle="modal" type="submit"  id="submit-button"
                         data-placement="bottom"
                         title="Submit Advertisement!">Submit</button>
-                    </form>
+                    {{!-- </form> --}}
                 </div>
             </div>
-        </form>
- 
-        <footer 
-            class="footer  mt-4 py-3 container-fluid text-white bg-secondary text-center "
-            id="footerContact">
-            <div class="row">
-                <div class="col-md">
-                    <small>Copyright &copy; Advertisement Portal's Website 2020</small>
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i>Aman
-                                Kumar</a>
-                            <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i>Felipe
-                                Ferreira</a>
-                            <a class="github-link" href="https://github.com/Michaelmw17"><i
-                                    class="fab fa-github"></i>Michael Watt</a>
-                            <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i>Prabh Singh
-                            </a>
-                        </li>
-                    </ul>
+                    {{!-- Thank you modal --}}
+                        <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                         <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Thank you!</h4>
+                                <button type="button" class="close" data-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                <p>Our team will review the information and the product will soon be displayed on the main page</p>
+                                </div>
+                                <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+        </form> 
+                        
+                <div class="d-flex flex-column min-vh-100 max-vh-10">
+                    <footer class="footer  mt-4 py-3 container-fluid text-white  text-center fixed-bottom"
+                        id="footerContact">
+                        <div class="row">
+                            <div class="col-md">
+                                <small>Copyright &copy; Advertisement Portal's Website 2020</small>
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a class="github-link" href="https://github.com/amankmr4"><i class="fab fa-github"></i> Aman
+                                            </a>
+                                        <a class="github-link" href="https://github.com/felipesqf"><i class="fab fa-github"></i> Felipe
+                                            </a>
+                                        <a class="github-link" href="https://github.com/Michaelmw17"><i
+                                                class="fab fa-github"></i> Michael</a>
+                                        <a class="github-link" href="https://github.com/prabhm512"><i class="fab fa-github"></i> Prabh
+                                            
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-            </div>
-        </footer>

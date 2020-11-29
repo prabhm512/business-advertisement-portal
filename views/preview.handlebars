@@ -1,7 +1,7 @@
     <nav  class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navBar" >
             <div class="container">
                 <a class="navbar-brand" href="/"><img
-                    src="./assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
+                    src="/assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
                     width="60"
                     height="60"
                     alt="businessIcon"
@@ -32,7 +32,7 @@
             <div id="jumboTron" class="jumbotron jumbotron-fluid text-primary">
                 <div class="text-center">
                     <img
-                    src="/public/assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
+                    src="/assets/images/202a200d-dc06-4960-a219-348c189ab453_200x200.png"
                     alt="Example testing img"
                     class="img-position"
                     id="business-img"
@@ -67,13 +67,13 @@
                     <h3 id="businessName">{{this.dataValues.Business.dataValues.bussName}}</h3>
                     <h5><i>{{this.dataValues.Business.dataValues.bussCategory}}</i></h5>
                 </div>
-    <img src="/images/tmp/{{this.dataValues.imgName}}" alt="Placeholder" class="card-img-top">
+    <img src="/images/uploads/{{this.dataValues.imgName}}" alt="Placeholder" class="card-img-top">
     <div class="card-body">
         <ul class="list-group product-details">
             <li class="list-group-item">{{this.dataValues.prodName}}</li>
             <li class="list-group-item"><span class="originalPriceCardRender">${{this.dataValues.originalPrice}}</span>   <span class="discountedPrice">&nbsp;&nbsp;${{this.dataValues.discountedPrice}}&nbsp;&nbsp;</span></li>
+            <textarea class="controlDescHeight list-group-item">{{this.dataValues.description}}</textarea>
             <li class="list-group-item bussEmail">{{this.dataValues.Business.dataValues.bussEmail}}</li>
-            <li class="list-group-item description">{{this.dataValues.description}}</li>
             <li class="list-group-item webLink"><a target="_blank" href="http://{{this.dataValues.webLink}}">View website</a></li>
         </ul>
     </div>

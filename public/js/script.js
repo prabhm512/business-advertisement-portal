@@ -26,6 +26,8 @@ $(document).ready(() => {
     });
   };
 
+  getAds();
+
   getBusinesses = () => {
     $.ajax({
       method: "GET",
@@ -38,19 +40,45 @@ $(document).ready(() => {
   getBusinesses();
 
   // When the submit button is clicked, store all entered values in an object
+  // eslint-disable-next-line no-unused-vars
   $(".submit-ad").on("click", event => {
-    event.preventDefault;
+    // event.preventDefault();
+    // $.post("/api/images")
     // check if email address is valid and that it is not left null
     if (
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         $(".businessEmail")
           .val()
           .trim()
-      )
+      ) &&
+      $(".businessName")
+        .val()
+        .trim() !== "" &&
+      $("#businessCategory")
+        .val()
+        .trim() &&
+      $(".prodName")
+        .val()
+        .trim() !== "" &&
+      $(".prodDesc")
+        .val()
+        .trim() !== "" &&
+      $(".webLink")
+        .val()
+        .trim() &&
+      $(".originalPrice")
+        .val()
+        .trim() !== "" &&
+      $(".discount")
+        .val()
+        .trim() !== "" &&
+      $(".prod-image")
+        .val()
+        .trim() !== ""
     ) {
       // Changes background colour of email input box back to white.
       // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
-      $(".businessEmail").css("background-color", "white");
+      $(".prod-image").css("background-color", "white");
       const business = {
         bussName: $(".businessName")
           .val()
@@ -63,10 +91,10 @@ $(document).ready(() => {
           .trim()
       };
       // value of field in C://fakepath/imgName. Just need the imgName part.
-      const relativeImgName = $(".prod-image")
-        .val()
-        .trim()
-        .substr(12);
+      // const relativeImgName = $(".prod-image")
+      //   .val()
+      //   .trim()
+      //   .substr(12);
       //removing the http before saving on db
       let newWebLink = $(".webLink")
         .val()
@@ -91,15 +119,17 @@ $(document).ready(() => {
         // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim(),
-        imgName: relativeImgName
+          .trim()
+        // imgName: relativeImgName
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
       // postBusiness(business);
-      $.post("/api/businesses", business).then(() => {
+      $.post("/api/businesses", business, () => {
         getBusinesses();
+
         postAd(advertisement);
+
         // Empty input after post has been made
         $(".businessName").val("");
         $(".businessCategory").val("");
@@ -110,15 +140,28 @@ $(document).ready(() => {
         $(".originalPrice").val("");
         $(".discount").val("");
         $(".prod-image").val("");
+
+        // Thank you modal call
+        $("#myModal").modal();
       });
-    } else {
-      // Changes background colour of email input box to red on entry of an incorrect email
-      $(".businessEmail").css("background-color", "#ffcccb");
+    }
+
+    if (
+      $(".prod-image")
+        .val()
+        .trim() === ""
+    ) {
+      // Changes border colour of image selection box to red if empty
+      $(".prod-image").css("background-color", "red");
     }
   });
 
   postAd = ad => {
-    $.post("/api/advertisements", ad).then(getAds());
+    $.post("/api/advertisements", ad, () => {
+      getAds();
+      // Thank you modal call
+      $("#myModal").modal();
+    });
   };
 
   // Delete the advertisement if it is rejected
