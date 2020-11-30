@@ -35,9 +35,9 @@
                 </div>
             </header>
 
-        <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
             <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
+                    <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
                     {{!-- <form class="was-validated"> --}}
@@ -65,7 +65,7 @@
                                 <div class="input-group-prepend">
                                     <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                                 </div>
-                                <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                                <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                                 </div>
                             </div>
                         <br>
@@ -88,9 +88,9 @@
                         <div class="mb-3">
                             <div class="input-group is-invalid">
                                 <div class="input-group-prepend">
-                                <label class="input-group-text" for="validatedInputGroupSelect"> $</label>
+                                <label class="input-group-text" for="validatedInputGroupSelect">$</label>
                                 </div>
-                            <input class="form-control originalPrice" type="text" placeholder="Original Price" required>
+                            <input class="form-control originalPrice" type="text" placeholder="Original Price (numbers only)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                         </div>
                         
                         </div>
@@ -99,7 +99,7 @@
                                 <div class="input-group-prepend">
                                 <label class="input-group-text" for="validatedInputGroupSelect">%</label>
                                 </div>
-                                <input class="form-control discount" type="text" placeholder="Percentage Discount Offered" required>
+                                <input class="form-control discount" type="text" placeholder="Percentage Discount Offered (numbers only)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -111,8 +111,6 @@
                         data-placement="bottom"
                         title="Submit Advertisement!">Submit</button>
                     {{!-- </form> --}}
-                </div>
-            </div>
                     {{!-- Thank you modal --}}
                         <div id="myModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
@@ -129,8 +127,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form> 
+                        </div>
+                    </form> 
+                </div>
+            </div>
                         
                 <div class="d-flex flex-column min-vh-100 max-vh-10">
                     <footer class="footer  mt-4 py-3 container-fluid text-white  text-center fixed-bottom"

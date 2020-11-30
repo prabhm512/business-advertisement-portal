@@ -23,8 +23,9 @@ body {
 }
 #myModal {
     position: absolute;
-    top: 50%;
-}
+    top: 100%;
+  }
+
 #navBar {
     opacity: 85%;
 }
@@ -188,7 +189,7 @@ padding: 20px;
 
 .discountedPrice {
     background-color: green;
-    color: black;
+    color: white;
     font-size: 22px;
 }
 
@@ -295,6 +296,12 @@ padding: 20px;
     .mb-8{
         width: 14em; 
     }
+
+    #myModal {
+    position: absolute;
+    top: 150%;
+  }
+
 
 }
 

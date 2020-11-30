@@ -47,13 +47,6 @@ module.exports = function(app) {
     // res.sendFile(path.join(__dirname, "../public/advertise.html"));
   });
 
-  //signup route, created for now but it can be deleted in the future when all admins are etup, if sign up is successful rediret to login otherwise stay in the page
-  app.get("/signup", (req, res) => {
-    if (req.user) {
-      res.redirect("login");
-    }
-    res.render("signup");
-  });
   //login route, it check the passowrd and login and redirect to the admin page, otherwise stay on the login.
   app.get("/login", (req, res) => {
     if (req.user) {
@@ -88,10 +81,6 @@ module.exports = function(app) {
 
   app.get("/about", (req, res) => {
     res.render("about");
-  });
-
-  app.get("/contact", (req, res) => {
-    res.render("contact");
   });
 
   // app.get("/advertise", homeController.getHome);
