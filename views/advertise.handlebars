@@ -65,7 +65,7 @@
                                 <div class="input-group-prepend">
                                     <span  class="input-group-text" id="validatedInputGroupPrepend">@</span>
                                 </div>
-                                <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" required>
+                                <input  data-toggle="tooltip" data-placement="bottom" title="Please enter a valid business email"  type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com" aria-describedby="validatedInputGroupPrepend" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                                 </div>
                             </div>
                         <br>
@@ -88,7 +88,7 @@
                         <div class="mb-3">
                             <div class="input-group is-invalid">
                                 <div class="input-group-prepend">
-                                <label class="input-group-text" for="validatedInputGroupSelect"> $</label>
+                                <label class="input-group-text" for="validatedInputGroupSelect">$</label>
                                 </div>
                             <input class="form-control originalPrice" type="text" placeholder="Original Price (numbers only)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                         </div>
