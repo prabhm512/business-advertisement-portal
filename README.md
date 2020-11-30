@@ -29,7 +29,7 @@ License under the [MIT License](LICENSE)
 
 ### Link to the Website
 
-<a href="https://still-oasis-19125.herokuapp.com/">Link to the Business Advertisement Portal</a>
+<a href="https://business-advertisement-portal.herokuapp.com/">Link to the Business Advertisement Portal</a>
 
 ## Authors
 Aman Kumar <br>
