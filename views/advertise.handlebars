@@ -90,7 +90,7 @@
                                 <div class="input-group-prepend">
                                 <label class="input-group-text" for="validatedInputGroupSelect"> $</label>
                                 </div>
-                            <input class="form-control originalPrice" type="text" placeholder="Original Price" required>
+                            <input class="form-control originalPrice" type="text" placeholder="Original Price (numbers only)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                         </div>
                         
                         </div>
@@ -99,7 +99,7 @@
                                 <div class="input-group-prepend">
                                 <label class="input-group-text" for="validatedInputGroupSelect">%</label>
                                 </div>
-                                <input class="form-control discount" type="text" placeholder="Percentage Discount Offered" required>
+                                <input class="form-control discount" type="text" placeholder="Percentage Discount Offered (numbers only)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                             </div>
                         </div>
                         <div class="form-group">
