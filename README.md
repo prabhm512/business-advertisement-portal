@@ -19,8 +19,8 @@ The project is composed of readme, package.json, schema.sql and license files.
 
 #### Final Product
 
-![screenshot1](https://github.com/prabhm512/project-2/tree/main/public/assets/images/main.jpg)
-![screenshot1](https://github.com/prabhm512/project-2/tree/main/public/assets/images/product.jpg)
+![screenshot1](https://github.com/prabhm512/project-2/blob/main/public/assets/images/main.JPG)
+![screenshot1](https://github.com/prabhm512/project-2/tree/main/public/assets/images/product.JPG)
 
 ### Licence
 
