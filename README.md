@@ -15,6 +15,7 @@ The project is composed of readme, package.json, schema.sql and license files.
 
 * Use [Passport](https://www.npmjs.com/package/passport) Passport is Express-compatible authentication middleware for Node.js.
   ​
+* Others: [Express Handlebars](https://www.npmjs.com/package/express-handlebars), [Sequelize](hhttps://www.npmjs.com/package/sequelize) 
 
 #### Final Product
 
