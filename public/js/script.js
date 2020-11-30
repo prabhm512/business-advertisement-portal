@@ -76,6 +76,8 @@ $(document).ready(() => {
         .val()
         .trim() !== ""
     ) {
+      // Thank you modal call
+      $("#myModal").modal();
       // Changes background colour of email input box back to white.
       // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
       $(".prod-image").css("background-color", "white");
@@ -140,9 +142,6 @@ $(document).ready(() => {
         $(".originalPrice").val("");
         $(".discount").val("");
         $(".prod-image").val("");
-
-        // Thank you modal call
-        $("#myModal").modal();
       });
     }
 

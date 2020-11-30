@@ -35,9 +35,9 @@
                 </div>
             </header>
 
-        <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
             <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
+                    <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
                     {{!-- <form class="was-validated"> --}}
@@ -123,8 +123,6 @@
                         data-placement="bottom"
                         title="Submit Advertisement!">Submit</button>
                     {{!-- </form> --}}
-                </div>
-            </div>
                     {{!-- Thank you modal --}}
                         <div id="myModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -142,7 +140,9 @@
                         </div>
                         </div>
                         </div>
-        </form> 
+                    </form> 
+                </div>
+            </div>
                         
                 <div class="d-flex flex-column min-vh-100 max-vh-10">
                     <footer class="footer  mt-4 py-3 container-fluid text-white  text-center fixed-bottom"
