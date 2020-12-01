@@ -66,40 +66,42 @@ $(document).ready(() => {
   // When the submit button is clicked, store all entered values in an object
   // eslint-disable-next-line no-unused-vars
   $(".submit-ad").on("click", event => {
+    console.log($("#user_uploads").val());
     // event.preventDefault();
     // $.post("/api/images")
+
     // check if email address is valid and that it is not left null
     if (
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         $(".businessEmail")
           .val()
           .trim()
-      ) &&
+      )
+    ) {
       $(".businessName")
         .val()
         .trim() !== "" &&
-      $("#businessCategory")
-        .val()
-        .trim() &&
-      $(".prodName")
-        .val()
-        .trim() !== "" &&
-      $(".prodDesc")
-        .val()
-        .trim() !== "" &&
-      $(".webLink")
-        .val()
-        .trim() &&
-      $(".originalPrice")
-        .val()
-        .trim() !== "" &&
-      $(".discount")
-        .val()
-        .trim() !== "" &&
-      $(".prod-image")
-        .val()
-        .trim() !== ""
-    ) {
+        $("#businessCategory")
+          .val()
+          .trim() &&
+        $(".prodName")
+          .val()
+          .trim() !== "" &&
+        $(".prodDesc")
+          .val()
+          .trim() !== "" &&
+        $(".webLink")
+          .val()
+          .trim() &&
+        $(".originalPrice")
+          .val()
+          .trim() !== "" &&
+        $(".discount")
+          .val()
+          .trim() !== "" &&
+        $("#user_uploads")
+          .val()
+          .trim() !== "";
       // Thank you modal call
       $("#myModal").modal();
       // Changes background colour of email input box back to white.
@@ -145,8 +147,8 @@ $(document).ready(() => {
         // prodImg: $(".prod-image").val(),
         bussEmail: $(".businessEmail")
           .val()
-          .trim()
-        // imgName: relativeImgName
+          .trim(),
+        imgSingleFileUploadURL: $("#user_uploads").val()
         // active: false
       };
       // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
@@ -170,12 +172,13 @@ $(document).ready(() => {
     }
 
     if (
-      $(".prod-image")
+      $("#user_uploads")
         .val()
         .trim() === ""
     ) {
       // Changes border colour of image selection box to red if empty
       $(".prod-image").css("background-color", "red");
+      $("#user_uploads").css("border-color", "red");
     }
   });
 
