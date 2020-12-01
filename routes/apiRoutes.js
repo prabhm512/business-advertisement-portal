@@ -79,6 +79,7 @@ module.exports = function(app) {
       // Get the name of the last image in the table
       const imgID = parseInt(await db.Image.max("id"));
       // Store the name of the image with the returned ID
+      // eslint-disable-next-line no-unused-vars
       let nameLastImg;
 
       await db.Image.findOne({

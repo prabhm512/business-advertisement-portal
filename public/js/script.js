@@ -66,7 +66,7 @@ $(document).ready(() => {
   // When the submit button is clicked, store all entered values in an object
   // eslint-disable-next-line no-unused-vars
   $(".submit-ad").on("click", event => {
-    console.log($("#user_uploads").val());
+    // console.log($("#user_uploads").val());
     // event.preventDefault();
     // $.post("/api/images")
 
@@ -76,34 +76,35 @@ $(document).ready(() => {
         $(".businessEmail")
           .val()
           .trim()
-      )
-    ) {
+      ) &&
       $(".businessName")
         .val()
         .trim() !== "" &&
-        $("#businessCategory")
-          .val()
-          .trim() &&
-        $(".prodName")
-          .val()
-          .trim() !== "" &&
-        $(".prodDesc")
-          .val()
-          .trim() !== "" &&
-        $(".webLink")
-          .val()
-          .trim() &&
-        $(".originalPrice")
-          .val()
-          .trim() !== "" &&
-        $(".discount")
-          .val()
-          .trim() !== "" &&
-        $("#user_uploads")
-          .val()
-          .trim() !== "";
+      $("#businessCategory")
+        .val()
+        .trim() &&
+      $(".prodName")
+        .val()
+        .trim() !== "" &&
+      $(".prodDesc")
+        .val()
+        .trim() !== "" &&
+      $(".webLink")
+        .val()
+        .trim() &&
+      $(".originalPrice")
+        .val()
+        .trim() !== "" &&
+      $(".discount")
+        .val()
+        .trim() !== "" &&
+      $("#user_uploads")
+        .val()
+        .trim() !== ""
+    ) {
       // Thank you modal call
       $("#myModal").modal();
+
       // Changes background colour of email input box back to white.
       // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
       $(".prod-image").css("background-color", "white");
