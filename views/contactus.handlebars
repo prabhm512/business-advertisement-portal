@@ -41,20 +41,20 @@
                     <div class="container-fluid" id="containerAdvertise">
                       
                       <br><br>
-                      <form class="no-validated novalidate" action="mailto:aman.kmr4@yahoo.com" method="POST" enctype="text/plain">
-                        <div class="mb-3">
+                      <form class="no-validated novalidate">
+                        {{!-- <div class="mb-3"> --}}
                           {{!-- <label for="validationTextarea">Business Name: </label> --}}
-                          <input type="text" placeholder="Name" class="form-control businessName " id="validationTextarea"></input>
-                        </div>
+                          {{!-- <input type="text" placeholder="Name" class="form-control" id="validationTextarea contact-name">
+                        </div> --}}
 
                         <div class="mb-3">
                           <div class="input-group ">
-                            <input type="text" class="form-control businessEmail " placeholder="Phone Number"
+                            <input type="text" class="form-control" id="contact-phoneNo" placeholder="Phone Number"
                               aria-describedby="validatedInputGroupPrepend">
                           </div>
                         </div>
 
-                        <div class="mb-3">
+                        {{!-- <div class="mb-3">
                           <div class="input-group ">
                             <div class="input-group-prepend">
                               <span class="input-group-text" id="validatedInputGroupPrepend">Email</span>
@@ -62,23 +62,23 @@
                             <input type="text" class="form-control businessEmail " placeholder="Johnsmith@abc.com"
                               aria-describedby="validatedInputGroupPrepend">
                           </div>
-                        </div>
+                        </div> --}}
 
                         <div class="mb-3">
                           <div class="input-group">
-                            <input type="text" class="form-control businessEmail" placeholder="Company Name"
+                            <input type="text" class="form-control" id="contact-compName"placeholder="Company Name"
                               aria-describedby="validatedInputGroupPrepend">
                           </div>
                         </div>
 
                         <div class="mb-3">
                           <div class="input-group ">
-                            <input type="text" class="form-control businessEmail " placeholder="Enquiry"
-                              aria-describedby="validatedInputGroupPrepend">
+                            <textarea type="text" class="form-control" id="contact-enquiry" placeholder="Enquiry"
+                              aria-describedby="validatedInputGroupPrepend"></textarea>
                           </div>
                         </div>
-                        <button class="btn btn-primary  submit-ad" type="submit" id="submit-button" data-toggle="tooltip"
-                          data-placement="top" title="Submit for admin review!"><span style="font-size:18px">Submit</span>
+                        <button class="btn btn-primary submit-enquiry" type="submit" id="submit-button" data-toggle="tooltip"
+                          data-placement="top" title="Submit your enquiry!"><span style="font-size:18px">Enquire</span>
                           {{!-- <i class="far fa-check-circle"></i> --}}
                         </button>
                       </form>

@@ -39,6 +39,30 @@ $(document).ready(() => {
 
   getBusinesses();
 
+  // Contact page enquiry
+  $(".submit-enquiry").on("click", () => {
+    const phoneNo = $("#contact-phoneNo")
+      .val()
+      .trim();
+    const compName = $("#contact-compName")
+      .val()
+      .trim();
+    const enquiry = $("#contact-enquiry")
+      .val()
+      .trim();
+    document.location.href =
+      "mailto:aman.kmr4@yahoo.com?subject=BAP Enquiry" +
+      "&body=" +
+      "Company Name:" +
+      encodeURIComponent(compName) +
+      "%0d" +
+      "Phone No:" +
+      encodeURIComponent(phoneNo) +
+      "%0d" +
+      "%0d" +
+      encodeURIComponent(enquiry);
+  });
+
   // When the submit button is clicked, store all entered values in an object
   // eslint-disable-next-line no-unused-vars
   $(".submit-ad").on("click", event => {
