@@ -1,5 +1,7 @@
 const db = require("../models");
+// eslint-disable-next-line no-unused-vars
 const uploadController = require("../controllers/upload");
+// eslint-disable-next-line no-unused-vars
 const upload = require("../config/middleware/upload");
 
 // eslint-disable-next-line prefer-const
@@ -53,7 +55,7 @@ module.exports = function(app) {
   });
 
   // Post route for image upload
-  app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
+  // app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
 
   //post the add
   app.post("/api/advertisements", async (req, res) => {
@@ -73,9 +75,11 @@ module.exports = function(app) {
 
     // Create a record in the advertisements table
     setTimeout(async () => {
+      console.log(req.body);
       // Get the name of the last image in the table
       const imgID = parseInt(await db.Image.max("id"));
       // Store the name of the image with the returned ID
+      // eslint-disable-next-line no-unused-vars
       let nameLastImg;
 
       await db.Image.findOne({
@@ -101,7 +105,7 @@ module.exports = function(app) {
         // prodImg: req.body.prodImg,
         active: false,
         archive: false,
-        imgName: nameLastImg,
+        imgName: req.body.imgSingleFileUploadURL,
         BusinessId: businessID
       })
         .then(ads => {

@@ -37,7 +37,8 @@
 
             <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
-                    <form id="articleAdvertise" class="mt-4 needs-validation" action="/api/images" method="POST" enctype="multipart/form-data" novalidate>
+                    {{!-- action="/api/images" method="POST" enctype="multipart/form-data" --}}
+                    <form id="articleAdvertise" class="mt-4 needs-validation" novalidate>
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
                     {{!-- <form class="was-validated"> --}}
@@ -103,7 +104,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="file" name="file" class="form-control-file border prod-image" id="input-files validatedInputGroupCustomFile" required>
+                            {{!-- Do not change the id, name and type of these input boxes --}}
+                            <input type="file" id="user_uploads" name="user_uploads" class="form-control-file border prod-image" id="input-files validatedInputGroupCustomFile" required>
+                            {{!-- Needed for Simple File Upload heroku add-on to work --}}
+                            <input type="hidden" id="user_uploads" name="user_uploads" class="prod-image" value="https://files.simplefileupload.com/randomstring/filename.png" required>
                             {{!-- <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label> --}}
                         </div>
                     
