@@ -246,6 +246,10 @@ padding: 20px;
     text-align: center;
 }
 
+.prod-image {
+    border: 2px solid black;
+}
+
 @-webkit-keyframes gradient {
 	0% {
 		background-position: 0% 50%;

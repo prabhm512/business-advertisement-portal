@@ -63,131 +63,88 @@ $(document).ready(() => {
       encodeURIComponent(enquiry);
   });
 
-  // When the submit button is clicked, store all entered values in an object
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.getElementsByClassName("needs-validation");
+  // Loop over them and prevent submission
   // eslint-disable-next-line no-unused-vars
-  $(".submit-ad").on("click", event => {
-    // console.log($("#user_uploads").val());
-    // event.preventDefault();
-    // $.post("/api/images")
+  Array.prototype.filter.call(forms, form => {
+    $(".submit-ad").on("click", event => {
+      if (form.checkValidity() === false || $("#user_uploads").val() === "") {
+        event.preventDefault();
+        event.stopPropagation();
+        // Error Modal call
+        $("#myErrorModal").modal();
+      } else {
+        // Thank you modal call
+        $("#myModal").modal();
 
-    // check if email address is valid and that it is not left null
-    if (
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        $(".businessEmail")
+        // Changes background colour of email input box back to white.
+        // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
+        const business = {
+          bussName: $(".businessName")
+            .val()
+            .trim(),
+          bussCategory: $("#businessCategory")
+            .val()
+            .trim(),
+          bussEmail: $(".businessEmail")
+            .val()
+            .trim()
+        };
+        //removing the http before saving on db
+        let newWebLink = $(".webLink")
           .val()
-          .trim()
-      ) &&
-      $(".businessName")
-        .val()
-        .trim() !== "" &&
-      $("#businessCategory")
-        .val()
-        .trim() &&
-      $(".prodName")
-        .val()
-        .trim() !== "" &&
-      $(".prodDesc")
-        .val()
-        .trim() !== "" &&
-      $(".webLink")
-        .val()
-        .trim() &&
-      $(".originalPrice")
-        .val()
-        .trim() !== "" &&
-      $(".discount")
-        .val()
-        .trim() !== "" &&
-      $("#user_uploads")
-        .val()
-        .trim() !== ""
-    ) {
-      // Thank you modal call
-      $("#myModal").modal();
+          .trim();
+        newWebLink = newWebLink.replace("https://", "");
+        // console.log(relativeImgName);
 
-      // Changes background colour of email input box back to white.
-      // A user may input an incorrect email first, making the box turn red. It should turn white after a successful entry.
-      $(".prod-image").css("background-color", "white");
-      const business = {
-        bussName: $(".businessName")
-          .val()
-          .trim(),
-        bussCategory: $("#businessCategory")
-          .val()
-          .trim(),
-        bussEmail: $(".businessEmail")
-          .val()
-          .trim()
-      };
-      // value of field in C://fakepath/imgName. Just need the imgName part.
-      // const relativeImgName = $(".prod-image")
-      //   .val()
-      //   .trim()
-      //   .substr(12);
-      //removing the http before saving on db
-      let newWebLink = $(".webLink")
-        .val()
-        .trim();
-      newWebLink = newWebLink.replace("https://", "");
-      // console.log(relativeImgName);
+        const advertisement = {
+          prodName: $(".prodName")
+            .val()
+            .trim(),
+          prodDesc: $(".prodDesc")
+            .val()
+            .trim(),
+          webLink: newWebLink,
+          originalPrice: $(".originalPrice")
+            .val()
+            .trim(),
+          discount: $(".discount")
+            .val()
+            .trim(),
+          // prodImg: $(".prod-image").val(),
+          bussEmail: $(".businessEmail")
+            .val()
+            .trim(),
+          imgSingleFileUploadURL: $("#user_uploads").val()
+          // active: false
+        };
+        // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
+        // postBusiness(business);
+        $.post("/api/businesses", business, () => {
+          getBusinesses();
 
-      const advertisement = {
-        prodName: $(".prodName")
-          .val()
-          .trim(),
-        prodDesc: $(".prodDesc")
-          .val()
-          .trim(),
-        webLink: newWebLink,
-        originalPrice: $(".originalPrice")
-          .val()
-          .trim(),
-        discount: $(".discount")
-          .val()
-          .trim(),
-        // prodImg: $(".prod-image").val(),
-        bussEmail: $(".businessEmail")
-          .val()
-          .trim(),
-        imgSingleFileUploadURL: $("#user_uploads").val()
-        // active: false
-      };
-      // Post the business object to /api/businesses then post the advertisement object to /api/advertisements
-      // postBusiness(business);
-      $.post("/api/businesses", business, () => {
-        getBusinesses();
+          postAd(advertisement);
 
-        postAd(advertisement);
-
-        // Empty input after post has been made
-        $(".businessName").val("");
-        $(".businessCategory").val("");
-        $(".businessEmail").val("");
-        $(".prodName").val("");
-        $(".prodDesc").val("");
-        $(".webLink").val("");
-        $(".originalPrice").val("");
-        $(".discount").val("");
-        $(".prod-image").val("");
-      });
-    }
-
-    if (
-      $("#user_uploads")
-        .val()
-        .trim() === ""
-    ) {
-      // Changes border colour of image selection box to red if empty
-      $(".prod-image").css("background-color", "red");
-      $("#user_uploads").css("border-color", "red");
-    }
+          // Empty input after post has been made
+          $(".businessName").val("");
+          $(".businessCategory").val("");
+          $(".businessEmail").val("");
+          $(".prodName").val("");
+          $(".prodDesc").val("");
+          $(".webLink").val("");
+          $(".originalPrice").val("");
+          $(".discount").val("");
+          // $(".prod-image").val("");
+        });
+      }
+      form.classList.add("was-validated");
+    });
   });
 
   postAd = ad => {
     $.post("/api/advertisements", ad, () => {
       getAds();
-      // Thank you modal call
-      $("#myModal").modal();
     });
   };
 
@@ -272,32 +229,32 @@ $(document).ready(() => {
   // });
 });
 
-(function() {
-  "use strict";
-  window.addEventListener(
-    "load",
-    () => {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      const forms = document.getElementsByClassName("needs-validation");
-      // Loop over them and prevent submission
-      // eslint-disable-next-line no-unused-vars
-      const validation = Array.prototype.filter.call(forms, form => {
-        form.addEventListener(
-          "submit",
-          event => {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      });
-    },
-    false
-  );
-})();
+// (function() {
+//   "use strict";
+//   window.addEventListener(
+//     "load",
+//     () => {
+//       // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//       const forms = document.getElementsByClassName("needs-validation");
+//       // Loop over them and prevent submission
+//       // eslint-disable-next-line no-unused-vars
+//       const validation = Array.prototype.filter.call(forms, form => {
+//         $(".submit-ad").on(
+//           "click",
+//           event => {
+//             if (form.checkValidity() === false) {
+//               event.preventDefault();
+//               event.stopPropagation();
+//             }
+//             form.classList.add("was-validated");
+//           },
+//           false
+//         );
+//       });
+//     },
+//     false
+//   );
+// })();
 
 $(() => {
   // eslint-disable-next-line quotes

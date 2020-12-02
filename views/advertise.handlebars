@@ -37,7 +37,6 @@
 
             <div class="container">
                 <div class="container-fluid" id="containerAdvertise">
-                    {{!-- action="/api/images" method="POST" enctype="multipart/form-data" --}}
                     <form id="articleAdvertise" class="mt-4 needs-validation" novalidate>
                     <h2 id="headerTwoAdvertise">Business Details</h2>
                     <br><br>
@@ -76,7 +75,7 @@
                         <div class="mb-3">
                         
                         {{!-- <label for="validationTextarea">Product Name: </label> --}}
-                        <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product of your business" required>
+                        <input class="form-control prodName" id="validationTextarea" placeholder="Product Name" data-toggle="tooltip" data-placement="left" title="Please enter a product name" required>
                         
                         </div>
                         <div class="mb-3">
@@ -84,7 +83,7 @@
                             <input class="form-control prodDesc" id="validationTextarea" placeholder="Brief Product Description" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" required>
                             </div>
                             <div class="mb-3">
-                            <input class="form-control webLink" id="validationTextarea" placeholder="Web link of the product" data-toggle="tooltip" data-placement="left" title="Please enter a valid Product Description" required>
+                            <input class="form-control webLink" id="validationTextarea" placeholder="Web link of the product" data-toggle="tooltip" data-placement="left" title="Please enter a valid link" required>
                             </div>
                         <div class="mb-3">
                             <div class="input-group is-invalid">
@@ -104,11 +103,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            {{!-- Do not change the id, name and type of these input boxes --}}
-                            <input type="file" id="user_uploads" name="user_uploads" class="form-control-file border prod-image" id="input-files validatedInputGroupCustomFile" required>
+                            {{!-- Do not change the id, name and type of these input boxes! --}}
+                            <input type="file" name="user_uploads" id="user_uploads" class="form-control-file border prod-image">
                             {{!-- Needed for Simple File Upload heroku add-on to work --}}
-                            <input type="hidden" id="user_uploads" name="user_uploads" class="prod-image" value="https://files.simplefileupload.com/randomstring/filename.png" required>
-                            {{!-- <label class="custom-file-label" for="validatedInputGroupCustomFile" >Submit Image file</label> --}}
+                            <input type="hidden" id="user_uploads" name="user_uploads" value="https://files.simplefileupload.com/randomstring/filename.png">
                         </div>
                     
                         <button class="btn btn-outline-primary submit-ad" data-toggle="modal" type="submit"  id="submit-button"
@@ -125,6 +123,24 @@
                                         </div>
                                         <div class="modal-body">
                                         <p>Our team will review the information and the product will soon be displayed on the main page</p>
+                                        </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    {{!-- Error Modal --}}
+                        <div id="myErrorModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Incomplete Form!</h4>
+                                        <button type="button" class="close" data-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <p>Please upload an image of your product and fill out all fields of the form!</p>
                                         </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
