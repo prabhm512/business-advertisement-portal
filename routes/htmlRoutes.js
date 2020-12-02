@@ -55,13 +55,6 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  //signup route, created for now but it can be deleted in the future when all admins are etup, if sign up is successful rediret to login otherwise stay in the page
-  app.get("/signup", (req, res) => {
-    if (req.user) {
-      res.redirect("login");
-    }
-    res.render("signup");
-  });
   //admin route protected by authentication, checks if the admin is logged to be render all admin info
   app.get("/admin", isAuthenticated, (req, res) => {
     db.Advertisement.findAll({ include: [db.Business] }).then(data => {
