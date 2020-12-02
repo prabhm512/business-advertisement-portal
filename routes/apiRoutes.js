@@ -1,8 +1,4 @@
 const db = require("../models");
-// eslint-disable-next-line no-unused-vars
-const uploadController = require("../controllers/upload");
-// eslint-disable-next-line no-unused-vars
-const upload = require("../config/middleware/upload");
 
 // eslint-disable-next-line prefer-const
 let passport = require("../config/passport");
@@ -54,9 +50,6 @@ module.exports = function(app) {
       .catch(err => res.json(err));
   });
 
-  // Post route for image upload
-  // app.post("/api/images", upload.single("file"), uploadController.uploadFiles);
-
   //post the add
   app.post("/api/advertisements", async (req, res) => {
     let businessID;
@@ -74,47 +67,28 @@ module.exports = function(app) {
       .catch(err => res.json(err));
 
     // Create a record in the advertisements table
-    setTimeout(async () => {
-      console.log(req.body);
-      // Get the name of the last image in the table
-      const imgID = parseInt(await db.Image.max("id"));
-      // Store the name of the image with the returned ID
-      // eslint-disable-next-line no-unused-vars
-      let nameLastImg;
+    // console.log(req.body);
 
-      await db.Image.findOne({
-        attributes: ["name"],
-        where: {
-          id: imgID
-        }
+    db.Advertisement.create({
+      prodName: req.body.prodName,
+      description: req.body.prodDesc,
+      originalPrice: req.body.originalPrice,
+      webLink: req.body.webLink,
+      discount: req.body.discount,
+      discountedPrice: parseFloat(
+        ((100 - req.body.discount) / 100) * req.body.originalPrice
+      ),
+      active: false,
+      archive: false,
+      imgName: req.body.imgSingleFileUploadURL,
+      BusinessId: businessID
+    })
+      .then(ads => {
+        // console.log(discountedPrice);
+        // console.log(ads);
+        return res.json(ads);
       })
-        .then(result => {
-          nameLastImg = result.dataValues.name;
-        })
-        .catch(err => res.json(err));
-
-      db.Advertisement.create({
-        prodName: req.body.prodName,
-        description: req.body.prodDesc,
-        originalPrice: req.body.originalPrice,
-        webLink: req.body.webLink,
-        discount: req.body.discount,
-        discountedPrice: parseFloat(
-          ((100 - req.body.discount) / 100) * req.body.originalPrice
-        ),
-        // prodImg: req.body.prodImg,
-        active: false,
-        archive: false,
-        imgName: req.body.imgSingleFileUploadURL,
-        BusinessId: businessID
-      })
-        .then(ads => {
-          // console.log(discountedPrice);
-          // console.log(ads);
-          return res.json(ads);
-        })
-        .catch(err => res.json(err));
-    }, 1000);
+      .catch(err => res.json(err));
   });
 
   // Delete the advertisement from the table
